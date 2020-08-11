@@ -1,0 +1,71 @@
+get:
+  tags:
+    - 'Back Office: Forms'
+  summary: Returns a list of forms available.
+  operationId: get_back-office_api_forms
+  parameters:
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Back Office: Forms'
+  summary: Create a new form for the group.
+  description: |
+
+    <p>Create a new group form.</p>
+  operationId: post_back-office_api_forms
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+      multipart/form-data:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+  responses:
+    '200':
+      description: ok
+      content: {}

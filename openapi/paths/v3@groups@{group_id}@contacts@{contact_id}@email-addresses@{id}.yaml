@@ -1,0 +1,149 @@
+put:
+  tags:
+    - 'Contacts: Email Addresses'
+  summary: Update an existing Contact email address.
+  operationId: put_v3_groups_group_id_contacts_contact_id_email-addresses_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'email_address[email_address]'
+          properties:
+            'email_address[email_address]':
+              type: string
+              description: A valid email address
+            'email_address[is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the contact.
+            'email_address[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - message
+                - notification
+      multipart/form-data:
+        schema:
+          required:
+            - 'email_address[email_address]'
+          properties:
+            'email_address[email_address]':
+              type: string
+              description: A valid email address
+            'email_address[is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the contact.
+            'email_address[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - message
+                - notification
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Contacts: Email Addresses'
+  summary: Remove an existing Contact email address.
+  operationId: delete_v3_groups_group_id_contacts_contact_id_email-addresses_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contacts: Email Addresses'
+  summary: Update an existing Contact email address.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_email-addresses_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'email_address[email_address]'
+          properties:
+            'email_address[email_address]':
+              type: string
+              description: A valid email address
+            'email_address[is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the contact.
+            'email_address[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - message
+                - notification
+      multipart/form-data:
+        schema:
+          required:
+            - 'email_address[email_address]'
+          properties:
+            'email_address[email_address]':
+              type: string
+              description: A valid email address
+            'email_address[is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the contact.
+            'email_address[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - message
+                - notification
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

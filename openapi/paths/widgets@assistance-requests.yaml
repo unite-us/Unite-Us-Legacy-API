@@ -1,0 +1,669 @@
+get:
+  tags:
+    - 'Widgets: Assistance Requests'
+  summary: >-
+    Retrieve the assistance request form configuration for the group specified
+    by the provided access token.
+  operationId: get_widgets_assistance-requests
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Widgets: Assistance Requests'
+  summary: Submit a new assistance request.
+  operationId: post_widgets_assistance-requests
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'assistance_request[description]'
+            - 'assistance_request[requestor][address][address_type]'
+            - 'assistance_request[requestor][address][city]'
+            - 'assistance_request[requestor][address][country]'
+            - 'assistance_request[requestor][address][line_1]'
+            - 'assistance_request[requestor][address][postal_code]'
+            - 'assistance_request[requestor][address][state]'
+            - 'assistance_request[requestor][email_address][email_address]'
+            - 'assistance_request[requestor][first_name]'
+            - 'assistance_request[requestor][last_name]'
+            - 'assistance_request[requestor][phone_number][phone_number]'
+            - 'assistance_request[service_type_id]'
+          properties:
+            'assistance_request[requestor][phone_number][phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'assistance_request[requestor][address][country]':
+              type: string
+              description: Country for the address.
+            'assistance_request[requestor][address][state]':
+              type: string
+              description: State or province for the address.
+            'assistance_request[requestor][address][postal_code]':
+              type: string
+              description: >-
+                Postal or ZIP code for the address. Minimum 5 characters in
+                length, maximum 15.
+            'assistance_request[requestor][address][city]':
+              type: string
+              description: City or town of the address.
+            'assistance_request[requestor][address][line_1]':
+              type: string
+              description: Address line 1
+            'assistance_request[requestor][address][address_type]':
+              type: string
+              description: Type of address.
+              enum:
+                - home
+                - mailing
+                - work
+                - unknown
+            'assistance_request[requestor][email_address][email_address]':
+              type: string
+              description: A valid email address
+            'assistance_request[requestor][last_name]':
+              type: string
+              description: Requestor's last name.
+            'assistance_request[requestor][first_name]':
+              type: string
+              description: Requestor's first name.
+            'assistance_request[service_type_id]':
+              type: string
+              description: Identifier of the type of service requested.
+            'assistance_request[description]':
+              type: string
+              description: Full-text of the assistance request.
+            'assistance_request[requestor][email]':
+              type: string
+              description: Requestor's email address.
+            'assistance_request[requestor][date_of_birth]':
+              type: number
+              description: >-
+                Unix (epoch) timestamp representing the requestor's date of
+                birth.
+            'assistance_request[requestor][gender]':
+              type: string
+              description: Requestor's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'assistance_request[requestor][citizenship]':
+              type: string
+              description: Requestor's specified citizenship.
+              enum:
+                - us-citizen
+                - us-national
+                - lawful-permanent-resident
+                - other
+                - undisclosed
+            'assistance_request[requestor][ethnicity]':
+              type: string
+              description: Requestor's specified ethnicity.
+              enum:
+                - hispanic-or-latino
+                - not-hispanic-or-latino
+                - undisclosed
+            'assistance_request[requestor][marital_status]':
+              type: string
+              description: Requestor's specified marital status.
+              enum:
+                - divorced
+                - domestic_partner
+                - married-civil-union
+                - single/never-married
+                - separated
+                - undisclosed
+                - widowed
+            'assistance_request[requestor][race]':
+              type: string
+              description: Requestor's specified race.
+              enum:
+                - american-indian-alaska-native
+                - asian
+                - black-african-american
+                - native-hawaiian-or-pacific-islander
+                - other-race
+                - undisclosed
+                - white
+            'assistance_request[requestor][email_address][is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the requestor.
+            'assistance_request[requestor][preferred_first_name]':
+              type: string
+              description: Requestor's preferred first name.
+            'assistance_request[requestor][title]':
+              type: string
+              description: Requestor's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'assistance_request[requestor][middle_name_initial]':
+              type: string
+              description: Requestor's middle name or initial.
+            'assistance_request[requestor][suffix]':
+              type: string
+              description: Requestor's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'assistance_request[requestor][address][line_2]':
+              type: string
+              description: 'Additional address details, ex. apartment, suite, etc.'
+            'assistance_request[requestor][address][is_mailing_address]':
+              type: boolean
+              description: Is this a mailing address.
+            'assistance_request[requestor][phone_number][is_primary]':
+              type: boolean
+              description: Is this phone number the requestor's primary requestor number.
+            'assistance_request[requestor][phone_number][phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'assistance_request[requestor][phone_number][can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'assistance_request[requestor][phone_number][country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'assistance_request[requestor][military][affiliation]':
+              type: string
+              description: Military affiliation
+              enum:
+                - military_member_or_veteran
+                - spouse
+                - widow
+                - family_member
+                - caregiver
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][current_status]':
+              type: string
+              description: Current military status
+              enum:
+                - active_duty
+                - national_guard
+                - reserve
+                - retiree
+                - veteran
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][currently_transitioning]':
+              type: string
+              description: Is the requestor currently transitioning?
+              enum:
+                - yes_12mos_before
+                - yes_12mos_after
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][at_least_one_day_active_duty]':
+              type: string
+              description: Has at least one day of active duty outside of basic training?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][branch]':
+              type: string
+              description: Branch of service
+              enum:
+                - air_force
+                - army
+                - coast_guard
+                - marines
+                - navy
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_era]':
+              type: string
+              description: Service era
+              enum:
+                - post_911
+                - persian_gulf
+                - post_vietnam
+                - vietnam
+                - post_korean
+                - korean_war
+                - pre_korean
+                - ww2
+                - merchant_marine
+                - ww1
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][entry_date]':
+              type: number
+              description: Date of entry
+            'assistance_request[requestor][military][exit_date]':
+              type: number
+              description: Date of exit
+            'assistance_request[requestor][military][deployed]':
+              type: string
+              description: Deployed?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][deployment_starts_at]':
+              type: number
+              description: Deployment start date
+            'assistance_request[requestor][military][deployment_ends_at]':
+              type: number
+              description: Deployment end date
+            'assistance_request[requestor][military][discharge_type]':
+              type: string
+              description: Discharge type
+              enum:
+                - honorable
+                - general
+                - other_than_honorable
+                - bad_conduct
+                - dishonorable
+                - uncharacterized
+                - other
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][discharged_due_to_disability]':
+              type: string
+              description: >-
+                Discharged or retired from military service for a disability
+                incurred in the line of duty?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_connected_disability]':
+              type: string
+              description: Has VA-rated Service-Connected Disability?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_connected_disability_rating]':
+              type: string
+              description: Service-Connected Disability Rating
+              enum:
+                - '0'
+                - '10'
+                - '20'
+                - '30'
+                - '40'
+                - '50'
+                - '60'
+                - '70'
+                - '80'
+                - '90'
+                - '100'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][proof_of_veteran_status]':
+              type: string
+              description: Have proof of veteran status?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][proof_type]':
+              type: string
+              description: Proof type
+              enum:
+                - dd214
+                - va_id
+                - statement_of_service
+                - retiree_id
+                - drivers_license
+                - military_id
+                - other
+                - prefer_not_to_disclose
+            'assistance_request[requestor][form_response][form_id]':
+              type: string
+              description: The identifier of the assistance request form.
+            'assistance_request[requestor][form_response][data]':
+              type: array
+              items:
+                type: string
+            'assistance_request[consent][signature_image]':
+              type: string
+              description: Base64 of the signature image
+      multipart/form-data:
+        schema:
+          required:
+            - 'assistance_request[description]'
+            - 'assistance_request[requestor][address][address_type]'
+            - 'assistance_request[requestor][address][city]'
+            - 'assistance_request[requestor][address][country]'
+            - 'assistance_request[requestor][address][line_1]'
+            - 'assistance_request[requestor][address][postal_code]'
+            - 'assistance_request[requestor][address][state]'
+            - 'assistance_request[requestor][email_address][email_address]'
+            - 'assistance_request[requestor][first_name]'
+            - 'assistance_request[requestor][last_name]'
+            - 'assistance_request[requestor][phone_number][phone_number]'
+            - 'assistance_request[service_type_id]'
+          properties:
+            'assistance_request[requestor][phone_number][phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'assistance_request[requestor][address][country]':
+              type: string
+              description: Country for the address.
+            'assistance_request[requestor][address][state]':
+              type: string
+              description: State or province for the address.
+            'assistance_request[requestor][address][postal_code]':
+              type: string
+              description: >-
+                Postal or ZIP code for the address. Minimum 5 characters in
+                length, maximum 15.
+            'assistance_request[requestor][address][city]':
+              type: string
+              description: City or town of the address.
+            'assistance_request[requestor][address][line_1]':
+              type: string
+              description: Address line 1
+            'assistance_request[requestor][address][address_type]':
+              type: string
+              description: Type of address.
+              enum:
+                - home
+                - mailing
+                - work
+                - unknown
+            'assistance_request[requestor][email_address][email_address]':
+              type: string
+              description: A valid email address
+            'assistance_request[requestor][last_name]':
+              type: string
+              description: Requestor's last name.
+            'assistance_request[requestor][first_name]':
+              type: string
+              description: Requestor's first name.
+            'assistance_request[service_type_id]':
+              type: string
+              description: Identifier of the type of service requested.
+            'assistance_request[description]':
+              type: string
+              description: Full-text of the assistance request.
+            'assistance_request[requestor][email]':
+              type: string
+              description: Requestor's email address.
+            'assistance_request[requestor][date_of_birth]':
+              type: number
+              description: >-
+                Unix (epoch) timestamp representing the requestor's date of
+                birth.
+            'assistance_request[requestor][gender]':
+              type: string
+              description: Requestor's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'assistance_request[requestor][citizenship]':
+              type: string
+              description: Requestor's specified citizenship.
+              enum:
+                - us-citizen
+                - us-national
+                - lawful-permanent-resident
+                - other
+                - undisclosed
+            'assistance_request[requestor][ethnicity]':
+              type: string
+              description: Requestor's specified ethnicity.
+              enum:
+                - hispanic-or-latino
+                - not-hispanic-or-latino
+                - undisclosed
+            'assistance_request[requestor][marital_status]':
+              type: string
+              description: Requestor's specified marital status.
+              enum:
+                - divorced
+                - domestic_partner
+                - married-civil-union
+                - single/never-married
+                - separated
+                - undisclosed
+                - widowed
+            'assistance_request[requestor][race]':
+              type: string
+              description: Requestor's specified race.
+              enum:
+                - american-indian-alaska-native
+                - asian
+                - black-african-american
+                - native-hawaiian-or-pacific-islander
+                - other-race
+                - undisclosed
+                - white
+            'assistance_request[requestor][email_address][is_primary]':
+              type: boolean
+              description: Is this email address the primary one for the requestor.
+            'assistance_request[requestor][preferred_first_name]':
+              type: string
+              description: Requestor's preferred first name.
+            'assistance_request[requestor][title]':
+              type: string
+              description: Requestor's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'assistance_request[requestor][middle_name_initial]':
+              type: string
+              description: Requestor's middle name or initial.
+            'assistance_request[requestor][suffix]':
+              type: string
+              description: Requestor's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'assistance_request[requestor][address][line_2]':
+              type: string
+              description: 'Additional address details, ex. apartment, suite, etc.'
+            'assistance_request[requestor][address][is_mailing_address]':
+              type: boolean
+              description: Is this a mailing address.
+            'assistance_request[requestor][phone_number][is_primary]':
+              type: boolean
+              description: Is this phone number the requestor's primary requestor number.
+            'assistance_request[requestor][phone_number][phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'assistance_request[requestor][phone_number][can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'assistance_request[requestor][phone_number][country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'assistance_request[requestor][military][affiliation]':
+              type: string
+              description: Military affiliation
+              enum:
+                - military_member_or_veteran
+                - spouse
+                - widow
+                - family_member
+                - caregiver
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][current_status]':
+              type: string
+              description: Current military status
+              enum:
+                - active_duty
+                - national_guard
+                - reserve
+                - retiree
+                - veteran
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][currently_transitioning]':
+              type: string
+              description: Is the requestor currently transitioning?
+              enum:
+                - yes_12mos_before
+                - yes_12mos_after
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][at_least_one_day_active_duty]':
+              type: string
+              description: Has at least one day of active duty outside of basic training?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][branch]':
+              type: string
+              description: Branch of service
+              enum:
+                - air_force
+                - army
+                - coast_guard
+                - marines
+                - navy
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_era]':
+              type: string
+              description: Service era
+              enum:
+                - post_911
+                - persian_gulf
+                - post_vietnam
+                - vietnam
+                - post_korean
+                - korean_war
+                - pre_korean
+                - ww2
+                - merchant_marine
+                - ww1
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][entry_date]':
+              type: number
+              description: Date of entry
+            'assistance_request[requestor][military][exit_date]':
+              type: number
+              description: Date of exit
+            'assistance_request[requestor][military][deployed]':
+              type: string
+              description: Deployed?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][deployment_starts_at]':
+              type: number
+              description: Deployment start date
+            'assistance_request[requestor][military][deployment_ends_at]':
+              type: number
+              description: Deployment end date
+            'assistance_request[requestor][military][discharge_type]':
+              type: string
+              description: Discharge type
+              enum:
+                - honorable
+                - general
+                - other_than_honorable
+                - bad_conduct
+                - dishonorable
+                - uncharacterized
+                - other
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][discharged_due_to_disability]':
+              type: string
+              description: >-
+                Discharged or retired from military service for a disability
+                incurred in the line of duty?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_connected_disability]':
+              type: string
+              description: Has VA-rated Service-Connected Disability?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][service_connected_disability_rating]':
+              type: string
+              description: Service-Connected Disability Rating
+              enum:
+                - '0'
+                - '10'
+                - '20'
+                - '30'
+                - '40'
+                - '50'
+                - '60'
+                - '70'
+                - '80'
+                - '90'
+                - '100'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][proof_of_veteran_status]':
+              type: string
+              description: Have proof of veteran status?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'assistance_request[requestor][military][proof_type]':
+              type: string
+              description: Proof type
+              enum:
+                - dd214
+                - va_id
+                - statement_of_service
+                - retiree_id
+                - drivers_license
+                - military_id
+                - other
+                - prefer_not_to_disclose
+            'assistance_request[requestor][form_response][form_id]':
+              type: string
+              description: The identifier of the assistance request form.
+            'assistance_request[requestor][form_response][data]':
+              type: array
+              items:
+                type: string
+            'assistance_request[consent][signature_image]':
+              type: string
+              description: Base64 of the signature image
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

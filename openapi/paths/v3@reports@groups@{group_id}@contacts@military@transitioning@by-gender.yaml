@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Client Military Transitioning by Gender
+  summary: Returns a snapshot of Client Military Transitioning by Gender
+  operationId: get_v3_reports_groups_group_id_contacts_military_transitioning_by-gender
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

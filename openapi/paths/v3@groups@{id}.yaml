@@ -1,0 +1,159 @@
+get:
+  tags:
+    - Groups
+  summary: Retrieve a complete group profile.
+  operationId: get_v3_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - Groups
+  summary: Update a group profile.
+  operationId: put_v3_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'group[consent_enabled]'
+          properties:
+            'group[consent_enabled]':
+              type: boolean
+              description: Is consent enabled for this organization?
+            'group[name]':
+              type: string
+              description: The name of the group.
+            'group[description]':
+              type: string
+              description: Description of the group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[logo_data_uri]':
+              type: string
+              description: >-
+                Base64 encoded string of the image to be used for the
+                organization logo.
+            'group[org_schedule]':
+              type: array
+              description: The hours of operation for the organization.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'group[consent_enabled]'
+          properties:
+            'group[consent_enabled]':
+              type: boolean
+              description: Is consent enabled for this organization?
+            'group[name]':
+              type: string
+              description: The name of the group.
+            'group[description]':
+              type: string
+              description: Description of the group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[logo_data_uri]':
+              type: string
+              description: >-
+                Base64 encoded string of the image to be used for the
+                organization logo.
+            'group[org_schedule]':
+              type: array
+              description: The hours of operation for the organization.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Groups
+  summary: Update a group profile.
+  operationId: patch_v3_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'group[consent_enabled]'
+          properties:
+            'group[consent_enabled]':
+              type: boolean
+              description: Is consent enabled for this organization?
+            'group[name]':
+              type: string
+              description: The name of the group.
+            'group[description]':
+              type: string
+              description: Description of the group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[logo_data_uri]':
+              type: string
+              description: >-
+                Base64 encoded string of the image to be used for the
+                organization logo.
+            'group[org_schedule]':
+              type: array
+              description: The hours of operation for the organization.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'group[consent_enabled]'
+          properties:
+            'group[consent_enabled]':
+              type: boolean
+              description: Is consent enabled for this organization?
+            'group[name]':
+              type: string
+              description: The name of the group.
+            'group[description]':
+              type: string
+              description: Description of the group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[logo_data_uri]':
+              type: string
+              description: >-
+                Base64 encoded string of the image to be used for the
+                organization logo.
+            'group[org_schedule]':
+              type: array
+              description: The hours of operation for the organization.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,21 @@
+get:
+  tags:
+    - User Confirmation
+  summary: Confirm a user account.
+  description: |
+
+    <p>Confirms a user account using the provided confirmation token. A
+    successfully confirmed account will result in a <code>200 OK</code>
+    response.</p>
+  operationId: get_v3_confirmation
+  parameters:
+    - name: confirmation_token
+      in: query
+      description: Confirmation token delivered to the email address of user.
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

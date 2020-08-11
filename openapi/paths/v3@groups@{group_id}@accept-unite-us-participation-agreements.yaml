@@ -1,0 +1,19 @@
+post:
+  tags:
+    - 'Groups: UniteUs Partcipation Agreements'
+  summary: Accept participation agreement for an organization.
+  description: |
+
+    <p>Accepts the participation agreement for a group. A successful acceptance
+    will return a <code>201 CREATED</code> response to the client.</p>
+  operationId: post_v3_groups_group_id_accept-unite-us-participation-agreements
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

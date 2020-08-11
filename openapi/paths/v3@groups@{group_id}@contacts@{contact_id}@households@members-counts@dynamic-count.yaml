@@ -1,0 +1,42 @@
+put:
+  tags:
+    - 'Groups::Contacts::Households::MembersCounts::Disable'
+  summary: Sets Household count to come dynamically from the number of related Members
+  operationId: >-
+    put_v3_groups_group_id_contacts_contact_id_households_members-counts_dynamic-count
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups::Contacts::Households::MembersCounts::Disable'
+  summary: Sets Household count to come dynamically from the number of related Members
+  operationId: >-
+    patch_v3_groups_group_id_contacts_contact_id_households_members-counts_dynamic-count
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

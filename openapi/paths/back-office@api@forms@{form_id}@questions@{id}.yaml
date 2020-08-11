@@ -1,0 +1,308 @@
+put:
+  tags:
+    - 'Back Office: Forms -> Questions'
+  summary: Update an existing question on the form.
+  description: |
+
+    <p>Update an existing question. Performing an update does not change any
+    existing responses to the question.</p>
+  operationId: put_back-office_api_forms_form_id_questions_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'question[section_id]':
+              type: string
+              description: Identifier of the form section this question belongs to
+            'question[label_text]':
+              type: string
+              description: The label text to be displayed for the question.
+            'question[placeholder_text]':
+              type: string
+              description: >-
+                Placeholder text to be displayed within the input, if supported
+                by the browser.
+            'question[help_text]':
+              type: string
+              description: Help text to be displayed with the question.
+            'question[help_text_position]':
+              type: string
+              description: 'Where to position the help text, if help text is provided.'
+              enum:
+                - before_input
+                - after_input
+            'question[display_order]':
+              type: number
+              description: >-
+                The position of the question within the question list display.
+                If within a section, the order is scoped.
+            'question[is_required]':
+              type: boolean
+              description: Is this question required to be completed?
+            'question[min_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the minimum number of selections
+                that must be made.
+            'question[max_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the maximum number of selections
+                that may be made.
+            'question[input_options]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][show_or_hide]':
+              type: string
+              description: Show or hide the specified question based on the conditions.
+              enum:
+                - show
+                - hide
+            'question[conditional_display][show_or_hide_question_id]':
+              type: string
+              description: Identifier of the question to be shown or hide.
+            'question[conditional_display][and_conditions]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][or_conditions]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'question[section_id]':
+              type: string
+              description: Identifier of the form section this question belongs to
+            'question[label_text]':
+              type: string
+              description: The label text to be displayed for the question.
+            'question[placeholder_text]':
+              type: string
+              description: >-
+                Placeholder text to be displayed within the input, if supported
+                by the browser.
+            'question[help_text]':
+              type: string
+              description: Help text to be displayed with the question.
+            'question[help_text_position]':
+              type: string
+              description: 'Where to position the help text, if help text is provided.'
+              enum:
+                - before_input
+                - after_input
+            'question[display_order]':
+              type: number
+              description: >-
+                The position of the question within the question list display.
+                If within a section, the order is scoped.
+            'question[is_required]':
+              type: boolean
+              description: Is this question required to be completed?
+            'question[min_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the minimum number of selections
+                that must be made.
+            'question[max_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the maximum number of selections
+                that may be made.
+            'question[input_options]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][show_or_hide]':
+              type: string
+              description: Show or hide the specified question based on the conditions.
+              enum:
+                - show
+                - hide
+            'question[conditional_display][show_or_hide_question_id]':
+              type: string
+              description: Identifier of the question to be shown or hide.
+            'question[conditional_display][and_conditions]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][or_conditions]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Forms -> Questions'
+  summary: Update an existing question on the form.
+  description: |
+
+    <p>Update an existing question. Performing an update does not change any
+    existing responses to the question.</p>
+  operationId: patch_back-office_api_forms_form_id_questions_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'question[section_id]':
+              type: string
+              description: Identifier of the form section this question belongs to
+            'question[label_text]':
+              type: string
+              description: The label text to be displayed for the question.
+            'question[placeholder_text]':
+              type: string
+              description: >-
+                Placeholder text to be displayed within the input, if supported
+                by the browser.
+            'question[help_text]':
+              type: string
+              description: Help text to be displayed with the question.
+            'question[help_text_position]':
+              type: string
+              description: 'Where to position the help text, if help text is provided.'
+              enum:
+                - before_input
+                - after_input
+            'question[display_order]':
+              type: number
+              description: >-
+                The position of the question within the question list display.
+                If within a section, the order is scoped.
+            'question[is_required]':
+              type: boolean
+              description: Is this question required to be completed?
+            'question[min_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the minimum number of selections
+                that must be made.
+            'question[max_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the maximum number of selections
+                that may be made.
+            'question[input_options]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][show_or_hide]':
+              type: string
+              description: Show or hide the specified question based on the conditions.
+              enum:
+                - show
+                - hide
+            'question[conditional_display][show_or_hide_question_id]':
+              type: string
+              description: Identifier of the question to be shown or hide.
+            'question[conditional_display][and_conditions]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][or_conditions]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'question[section_id]':
+              type: string
+              description: Identifier of the form section this question belongs to
+            'question[label_text]':
+              type: string
+              description: The label text to be displayed for the question.
+            'question[placeholder_text]':
+              type: string
+              description: >-
+                Placeholder text to be displayed within the input, if supported
+                by the browser.
+            'question[help_text]':
+              type: string
+              description: Help text to be displayed with the question.
+            'question[help_text_position]':
+              type: string
+              description: 'Where to position the help text, if help text is provided.'
+              enum:
+                - before_input
+                - after_input
+            'question[display_order]':
+              type: number
+              description: >-
+                The position of the question within the question list display.
+                If within a section, the order is scoped.
+            'question[is_required]':
+              type: boolean
+              description: Is this question required to be completed?
+            'question[min_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the minimum number of selections
+                that must be made.
+            'question[max_selections]':
+              type: number
+              description: >-
+                If the question is a selection-based question (drop-down,
+                checkbox list, etc.), what is the maximum number of selections
+                that may be made.
+            'question[input_options]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][show_or_hide]':
+              type: string
+              description: Show or hide the specified question based on the conditions.
+              enum:
+                - show
+                - hide
+            'question[conditional_display][show_or_hide_question_id]':
+              type: string
+              description: Identifier of the question to be shown or hide.
+            'question[conditional_display][and_conditions]':
+              type: array
+              items:
+                type: string
+            'question[conditional_display][or_conditions]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

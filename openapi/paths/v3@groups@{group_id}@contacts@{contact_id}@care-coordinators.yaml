@@ -1,0 +1,40 @@
+put:
+  tags:
+    - Care Coordinators
+  summary: Updates the assigned Care Coordinator to a Contact
+  operationId: put_v3_groups_group_id_contacts_contact_id_care-coordinators
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Care Coordinators
+  summary: Updates the assigned Care Coordinator to a Contact
+  operationId: patch_v3_groups_group_id_contacts_contact_id_care-coordinators
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,26 @@
+get:
+  tags:
+    - 'Groups: Referral Contact Program Enrollment'
+  summary: Returns enrollment details for the contact and the selected program.
+  operationId: >-
+    get_v3_groups_group_id_referrals_referral_id_contact_programs_program_id_enrollment
+  parameters:
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

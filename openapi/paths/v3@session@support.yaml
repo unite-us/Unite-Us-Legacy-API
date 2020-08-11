@@ -1,0 +1,9 @@
+get:
+  tags:
+    - Apiv3securesessionssupports
+  summary: Return supporting information about the user's current session
+  operationId: get_v3_session_support
+  responses:
+    '200':
+      description: ok
+      content: {}

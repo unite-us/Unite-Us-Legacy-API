@@ -1,0 +1,27 @@
+get:
+  tags:
+    - 'Cases: Assessments/Forms'
+  summary: >-
+    Returns forms that have been completed (at least one response) for the
+    specified case (uses service type).
+  operationId: get_v3_groups_group_id_contacts_contact_id_cases_service_case_id_forms
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

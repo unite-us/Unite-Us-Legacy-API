@@ -1,0 +1,1067 @@
+openapi: 3.0.1
+info:
+  title: 'Unite US API (params in:body)'
+  description: |-
+
+    <p>Unite US API.</p>
+    &copy; 2020 Unite US, Inc. All Rights Reserved.
+  version: '3'
+  x-copyright: '&copy; 2020 Unite US, Inc. All Rights Reserved.'
+servers:
+  - url: '//localhost:3000/api'
+tags:
+  - name: 'API: Bootstrap'
+    description: ''
+  - name: 'API: Status'
+    description: ''
+  - name: Address Book Groups
+    description: ''
+  - name: 'All-Time Reports: Actionables Summary'
+    description: ''
+  - name: 'All-Time Reports: Counts Summary'
+    description: ''
+  - name: Area to Accept Consent Requests that are created via Attestation
+    description: ''
+  - name: Area to Reject Consent Requests that are created via Attestation
+    description: ''
+  - name: 'Assistance Requests: Filter Timeline Events'
+    description: ''
+  - name: 'Assistance Requests: Timeline Events'
+    description: ''
+  - name: 'Authentication: Validate Token'
+    description: ''
+  - name: 'Back Office: Duplicate a form and all associations'
+    description: ''
+  - name: 'Back Office: Duplicate a section and all its children'
+    description: ''
+  - name: 'Back Office: Forms'
+    description: ''
+  - name: 'Back Office: Forms -> Questions'
+    description: ''
+  - name: 'Back Office: Forms -> Questions -> Input Options'
+    description: ''
+  - name: 'Back Office: Forms -> Questions -> Validators'
+    description: ''
+  - name: 'Back Office: Forms -> Sections'
+    description: ''
+  - name: 'Back Office: Forms Publish'
+    description: ''
+  - name: 'Back Office: Global Questions Search'
+    description: ''
+  - name: 'Back Office: Universal Search'
+    description: ''
+  - name: >-
+      Back Office: Update a Questions Section.  Move a question to a nother
+      section
+    description: ''
+  - name: 'Back Office: Use Forms'
+    description: ''
+  - name: Care Coordinators
+    description: ''
+  - name: 'Care Team Members: Addresses'
+    description: ''
+  - name: 'Care Team Members: Email Addresses'
+    description: ''
+  - name: 'Care Team Members: Phone Numbers'
+    description: ''
+  - name: Cases
+    description: ''
+  - name: 'Cases: Assessments/Forms'
+    description: ''
+  - name: 'Cases: Documents'
+    description: ''
+  - name: 'Cases: Primary Case Worker'
+    description: ''
+  - name: Client Gender by Age
+    description: ''
+  - name: Client Military Affiliation by Gender
+    description: ''
+  - name: Client Military Branch of Service by Gender
+    description: ''
+  - name: Client Military Service Era by Branch of Service
+    description: ''
+  - name: Client Military Service Era by Gender
+    description: ''
+  - name: Client Military Transition Status by Branch of Service
+    description: ''
+  - name: Client Military Transitioning by Gender
+    description: ''
+  - name: Client Race by Ethnicity
+    description: ''
+  - name: Clients Military Status by Gender
+    description: ''
+  - name: Clients by Age
+    description: ''
+  - name: Clients by Ethnicity
+    description: ''
+  - name: Clients by Gender
+    description: ''
+  - name: Clients by Military Affiliation
+    description: ''
+  - name: Clients by Military Branch of Service
+    description: ''
+  - name: Clients by Military Deployment
+    description: ''
+  - name: Clients by Military Discharge
+    description: ''
+  - name: Clients by Military Service Era
+    description: ''
+  - name: Clients by Military Status
+    description: ''
+  - name: Clients by Military Transitioning Status
+    description: ''
+  - name: Clients by Race
+    description: ''
+  - name: Closed Service Cases by Service Type
+    description: ''
+  - name: Closed Service Cases by Service Type and Outcome
+    description: ''
+  - name: Closed Service Cases by Sub Types of Service Type
+    description: ''
+  - name: Confirming Two-Factor Authentication (2FA) Registration
+    description: |
+
+      <p>Confirm 2FA verification code for a Unite US user account.</p>
+  - name: 'Contact: Care Team'
+    description: ''
+  - name: Contacts
+    description: ''
+  - name: Contacts Gender by Age Report
+    description: ''
+  - name: Contacts with Intakes
+    description: ''
+  - name: 'Contacts: Addresses'
+    description: ''
+  - name: 'Contacts: Consents - Create an email consent request'
+    description: ''
+  - name: 'Contacts: Consents - Create an sms consent request'
+    description: ''
+  - name: 'Contacts: Consents - Create and accept a document consent request'
+    description: ''
+  - name: 'Contacts: Consents - Create consent request URL'
+    description: ''
+  - name: 'Contacts: Documents'
+    description: ''
+  - name: 'Contacts: Email Addresses'
+    description: ''
+  - name: 'Contacts: Filter Timeline Events'
+    description: ''
+  - name: 'Contacts: Filter by Primary Worker'
+    description: ''
+  - name: 'Contacts: Forms'
+    description: ''
+  - name: 'Contacts: Interactions'
+    description: ''
+  - name: 'Contacts: Phone Numbers'
+    description: ''
+  - name: 'Contacts: Program Enrollment'
+    description: ''
+  - name: 'Contacts: Referrals'
+    description: ''
+  - name: 'Contacts: Respond to Form'
+    description: ''
+  - name: 'Contacts: Select/Use by Group'
+    description: ''
+  - name: 'Contacts: Timeline Events'
+    description: ''
+  - name: Controller for Revoking Consent for a Client
+    description: ''
+  - name: Document Deletion
+    description: ''
+  - name: Documents
+    description: ''
+  - name: EMR Context
+    description: ''
+  - name: EMR Patient Contact Information
+    description: ''
+  - name: EMR Patient Contact association
+    description: ''
+  - name: Exports
+    description: ''
+  - name: Global Contact Notification Settings for Users
+    description: ''
+  - name: Global Notification Settings for Users
+    description: ''
+  - name: 'Group Cases: Enrollment'
+    description: ''
+  - name: Group sharing
+    description: ''
+  - name: Groups
+    description: ''
+  - name: 'Groups -> Assistance Requests: Forms'
+    description: ''
+  - name: 'Groups Service Types: Outcomes'
+    description: ''
+  - name: 'Groups: Assistance Request Form Config'
+    description: ''
+  - name: 'Groups: Assistance Requests'
+    description: ''
+  - name: 'Groups: Cases'
+    description: ''
+  - name: 'Groups: Cases Converted from Sent Referrals'
+    description: ''
+  - name: 'Groups: Closed Referrals'
+    description: ''
+  - name: 'Groups: Draft Referrals'
+    description: ''
+  - name: 'Groups: Filter Timeline Events'
+    description: ''
+  - name: 'Groups: Forms Available for Use'
+    description: ''
+  - name: >-
+      Groups: Forms Returns a form with a single question containing only the
+      questions marked as intake
+    description: ''
+  - name: 'Groups: Hours of Operation'
+    description: ''
+  - name: 'Groups: Open Channel referrals'
+    description: ''
+  - name: 'Groups: Program Users'
+    description: ''
+  - name: 'Groups: Programs'
+    description: ''
+  - name: 'Groups: Referral Contact'
+    description: ''
+  - name: 'Groups: Referral Contact Forms'
+    description: ''
+  - name: 'Groups: Referral Contact Program Enrollment'
+    description: ''
+  - name: 'Groups: Referral Contact Respond to Form'
+    description: ''
+  - name: 'Groups: Referrals'
+    description: ''
+  - name: 'Groups: Referrals Received'
+    description: ''
+  - name: 'Groups: Referrals Sent'
+    description: ''
+  - name: 'Groups: Screenings'
+    description: ''
+  - name: 'Groups: Search -> Global Contacts'
+    description: ''
+  - name: 'Groups: Service Case Contact Forms'
+    description: ''
+  - name: 'Groups: Service Case Contact Respond to Form'
+    description: ''
+  - name: 'Groups: Service Types Offered'
+    description: ''
+  - name: 'Groups: Service Types Offered along with Outcomes scope to the Group'
+    description: ''
+  - name: 'Groups: Service Types Offered: Sub-Types'
+    description: ''
+  - name: 'Groups: Timeline Events'
+    description: ''
+  - name: 'Groups: UniteUs Partcipation Agreements'
+    description: >
+
+      <p>Organization Administrators Accept Participation Agreement on Behalf of
+      a
+
+      Group</p>
+  - name: 'Groups: User Invitation Reminders'
+    description: ''
+  - name: 'Groups: User Invitations'
+    description: ''
+  - name: 'Groups: Users'
+    description: ''
+  - name: 'Groups: Users - System Roles'
+    description: ''
+  - name: 'Groups: Users With Contacts'
+    description: ''
+  - name: 'Groups::Contacts::Cases: Filter Timeline Events'
+    description: ''
+  - name: 'Groups::Contacts::Cases: Timeline Events'
+    description: ''
+  - name: 'Groups::Contacts::Households::Members'
+    description: ''
+  - name: 'Groups::Contacts::Households::MembersCounts'
+    description: ''
+  - name: 'Groups::Contacts::Households::MembersCounts::Disable'
+    description: ''
+  - name: 'Groups::Contacts::Households::MembersCounts::Enable'
+    description: ''
+  - name: 'Groups::Referrals: Hold'
+    description: ''
+  - name: 'Groups::Referrals: Reassign Program'
+    description: ''
+  - name: 'Groups::Referrals: Recall'
+    description: ''
+  - name: 'Groups::Users: Connections'
+    description: ''
+  - name: Ingestions
+    description: ''
+  - name: 'Intake: Documents'
+    description: ''
+  - name: 'Invitations: User'
+    description: ''
+  - name: Network Client Military Affiliation by Gender
+    description: ''
+  - name: Network Client Military Branch of Service by Gender
+    description: ''
+  - name: Network Client Military Service Era by Branch of Service
+    description: ''
+  - name: Network Client Military Service Era by Gender
+    description: ''
+  - name: Network Client Military Transition Status by Branch of Service
+    description: ''
+  - name: Network Client Military Transitioning by Gender
+    description: ''
+  - name: Network Clients Military Status by Gender
+    description: ''
+  - name: Network Clients by Military Affiliation
+    description: ''
+  - name: Network Clients by Military Branch of Service
+    description: ''
+  - name: Network Clients by Military Deployment
+    description: ''
+  - name: Network Clients by Military Discharge
+    description: ''
+  - name: Network Clients by Military Service Era
+    description: ''
+  - name: Network Clients by Military Status
+    description: ''
+  - name: Network Clients by Military Transitioning Status
+    description: ''
+  - name: Network Contacts By Age Report
+    description: ''
+  - name: Network Contacts By Ethnicity Report
+    description: ''
+  - name: Network Contacts By Gender Report
+    description: ''
+  - name: Network Contacts By Race Report
+    description: ''
+  - name: 'Networks Service Types: Outcomes'
+    description: ''
+  - name: 'Networks: Groups'
+    description: ''
+  - name: 'Networks: Groups by Referral Scope'
+    description: ''
+  - name: 'Networks: Service Types'
+    description: ''
+  - name: 'Networks: Service Types Offered'
+    description: ''
+  - name: 'Networks: Service Types Offered along with Outcomes scope to the Network'
+    description: ''
+  - name: 'Networks: Users/Collaborators by Referral Scopes'
+    description: ''
+  - name: Notification Preferences for a Group that a User belongs to
+    description: ''
+  - name: Notification Preferences for a Network that a User belongs to
+    description: ''
+  - name: 'Notifications: Email Unsubscribe'
+    description: ''
+  - name: Organization Service Cases
+    description: ''
+  - name: 'Public: area to Accept Consent Requests that are created via SMS or Email'
+    description: ''
+  - name: 'Public: area to Reject Consent Requests that are created via SMS or Email'
+    description: ''
+  - name: 'Public: area to accept/reject consents that are created via SMS or Email'
+    description: ''
+  - name: Received Referrals by Organization
+    description: ''
+  - name: 'Referral: Forms Available for Use'
+    description: ''
+  - name: 'Referrals: Documents'
+    description: ''
+  - name: 'Referrals: Filter Timeline Events'
+    description: ''
+  - name: 'Referrals: Primary Referral Worker'
+    description: ''
+  - name: 'Referrals: Timeline Events'
+    description: ''
+  - name: 'Screenings: Fetch screenings for contact'
+    description: ''
+  - name: 'Screenings: Respond to Screening'
+    description: ''
+  - name: Search
+    description: ''
+  - name: Sent Referrals by Organization
+    description: ''
+  - name: Service Cases by Service Type
+    description: ''
+  - name: Service Cases by Source
+    description: ''
+  - name: Service Cases by Status
+    description: ''
+  - name: Service Cases by Sub Types of Service Type
+    description: ''
+  - name: Unique Network Contacts Report
+    description: ''
+  - name: Unique Network Organizations Report
+    description: ''
+  - name: Unique Network Users Report
+    description: ''
+  - name: Unique Organization Clients Report
+    description: ''
+  - name: User Confirmation
+    description: ''
+  - name: User Registration
+    description: ''
+  - name: Users
+    description: ''
+  - name: 'Users: Active Session Management'
+    description: |
+
+      <p>Manage active user sessions (tokens) registered with the API.</p>
+  - name: 'Users: Addresses'
+    description: ''
+  - name: 'Users: License Agreements (EULA)'
+    description: >
+
+      <p>Accepts license agreement for a user to access the software.
+      UU3-1307</p>
+  - name: 'Users: Two-Factor Authentication (2FA)'
+    description: |
+
+      <p>Enable and disable 2FA for a Unite US user account.</p>
+  - name: 'Users: Zendesk Support'
+    description: ''
+  - name: 'Widgets: Assistance Requests'
+    description: ''
+paths:
+  /:
+    $ref: paths.yaml
+  /back-office/api/forms:
+    $ref: paths/back-office@api@forms.yaml
+  '/back-office/api/forms/use-by/groups/{group_id}/programs/{id}':
+    $ref: 'paths/back-office@api@forms@use-by@groups@{group_id}@programs@{id}.yaml'
+  '/back-office/api/forms/use-by/groups/{id}':
+    $ref: 'paths/back-office@api@forms@use-by@groups@{id}.yaml'
+  '/back-office/api/forms/use-by/networks/{id}':
+    $ref: 'paths/back-office@api@forms@use-by@networks@{id}.yaml'
+  '/back-office/api/forms/{form_id}/duplicate':
+    $ref: 'paths/back-office@api@forms@{form_id}@duplicate.yaml'
+  '/back-office/api/forms/{form_id}/questions':
+    $ref: 'paths/back-office@api@forms@{form_id}@questions.yaml'
+  '/back-office/api/forms/{form_id}/questions/{id}':
+    $ref: 'paths/back-office@api@forms@{form_id}@questions@{id}.yaml'
+  '/back-office/api/forms/{form_id}/questions/{question_id}/input-options':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@questions@{question_id}@input-options.yaml
+  '/back-office/api/forms/{form_id}/questions/{question_id}/input-options/{id}':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@questions@{question_id}@input-options@{id}.yaml
+  '/back-office/api/forms/{form_id}/questions/{question_id}/update-section':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@questions@{question_id}@update-section.yaml
+  '/back-office/api/forms/{form_id}/questions/{question_id}/validators':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@questions@{question_id}@validators.yaml
+  '/back-office/api/forms/{form_id}/questions/{question_id}/validators/{id}':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@questions@{question_id}@validators@{id}.yaml
+  '/back-office/api/forms/{form_id}/sections':
+    $ref: 'paths/back-office@api@forms@{form_id}@sections.yaml'
+  '/back-office/api/forms/{form_id}/sections/{id}':
+    $ref: 'paths/back-office@api@forms@{form_id}@sections@{id}.yaml'
+  '/back-office/api/forms/{form_id}/sections/{id}/duplicate':
+    $ref: 'paths/back-office@api@forms@{form_id}@sections@{id}@duplicate.yaml'
+  '/back-office/api/forms/{form_id}/use-by/groups/{group_id}/programs/{id}':
+    $ref: >-
+      paths/back-office@api@forms@{form_id}@use-by@groups@{group_id}@programs@{id}.yaml
+  '/back-office/api/forms/{form_id}/use-by/groups/{id}':
+    $ref: 'paths/back-office@api@forms@{form_id}@use-by@groups@{id}.yaml'
+  '/back-office/api/forms/{form_id}/use-by/networks/{id}':
+    $ref: 'paths/back-office@api@forms@{form_id}@use-by@networks@{id}.yaml'
+  '/back-office/api/forms/{id}':
+    $ref: 'paths/back-office@api@forms@{id}.yaml'
+  '/back-office/api/forms/{id}/publish':
+    $ref: 'paths/back-office@api@forms@{id}@publish.yaml'
+  /back-office/api/questions/search/global:
+    $ref: paths/back-office@api@questions@search@global.yaml
+  /back-office/api/search/universal:
+    $ref: paths/back-office@api@search@universal.yaml
+  '/groups/{id}':
+    $ref: 'paths/groups@{id}.yaml'
+  '/ingestions/{source}/data':
+    $ref: 'paths/ingestions@{source}@data.yaml'
+  '/networks/{network_id}/groups':
+    $ref: 'paths/networks@{network_id}@groups.yaml'
+  '/networks/{network_id}/groups/{id}':
+    $ref: 'paths/networks@{network_id}@groups@{id}.yaml'
+  '/networks/{network_id}/service_types':
+    $ref: 'paths/networks@{network_id}@service_types.yaml'
+  /notifications/unsubscribe:
+    $ref: paths/notifications@unsubscribe.yaml
+  /system/bootstrap:
+    $ref: paths/system@bootstrap.yaml
+  /system/bootstrap/service-types:
+    $ref: paths/system@bootstrap@service-types.yaml
+  /system/health:
+    $ref: paths/system@health.yaml
+  /v3/confirmation:
+    $ref: paths/v3@confirmation.yaml
+  '/v3/consent/{consent_token}/accept':
+    $ref: 'paths/v3@consent@{consent_token}@accept.yaml'
+  '/v3/consent/{consent_token}/reject':
+    $ref: 'paths/v3@consent@{consent_token}@reject.yaml'
+  '/v3/consent/{token}':
+    $ref: 'paths/v3@consent@{token}.yaml'
+  '/v3/emr/groups/{group_id}/contacts/update-info-with-patient':
+    $ref: 'paths/v3@emr@groups@{group_id}@contacts@update-info-with-patient.yaml'
+  '/v3/emr/groups/{group_id}/contacts/{contact_id}/associate':
+    $ref: 'paths/v3@emr@groups@{group_id}@contacts@{contact_id}@associate.yaml'
+  '/v3/emr/groups/{group_id}/patient':
+    $ref: 'paths/v3@emr@groups@{group_id}@patient.yaml'
+  '/v3/groups/{group_id}/accept-unite-us-participation-agreements':
+    $ref: 'paths/v3@groups@{group_id}@accept-unite-us-participation-agreements.yaml'
+  '/v3/groups/{group_id}/activity-stream/events':
+    $ref: 'paths/v3@groups@{group_id}@activity-stream@events.yaml'
+  '/v3/groups/{group_id}/activity-stream/events/filter':
+    $ref: 'paths/v3@groups@{group_id}@activity-stream@events@filter.yaml'
+  '/v3/groups/{group_id}/address-books/groups':
+    $ref: 'paths/v3@groups@{group_id}@address-books@groups.yaml'
+  '/v3/groups/{group_id}/address-books/groups/{id}':
+    $ref: 'paths/v3@groups@{group_id}@address-books@groups@{id}.yaml'
+  '/v3/groups/{group_id}/assistance-requests':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests.yaml'
+  '/v3/groups/{group_id}/assistance-requests/accepted':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@accepted.yaml'
+  '/v3/groups/{group_id}/assistance-requests/archived':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@archived.yaml'
+  '/v3/groups/{group_id}/assistance-requests/closed':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@closed.yaml'
+  '/v3/groups/{group_id}/assistance-requests/config':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@config.yaml'
+  '/v3/groups/{group_id}/assistance-requests/in-review':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@in-review.yaml'
+  '/v3/groups/{group_id}/assistance-requests/pending':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@pending.yaml'
+  '/v3/groups/{group_id}/assistance-requests/{assistance_request_id}/activity-stream/events':
+    $ref: >-
+      paths/v3@groups@{group_id}@assistance-requests@{assistance_request_id}@activity-stream@events.yaml
+  '/v3/groups/{group_id}/assistance-requests/{assistance_request_id}/activity-stream/events/filter':
+    $ref: >-
+      paths/v3@groups@{group_id}@assistance-requests@{assistance_request_id}@activity-stream@events@filter.yaml
+  '/v3/groups/{group_id}/assistance-requests/{assistance_request_id}/close':
+    $ref: >-
+      paths/v3@groups@{group_id}@assistance-requests@{assistance_request_id}@close.yaml
+  '/v3/groups/{group_id}/assistance-requests/{assistance_request_id}/form':
+    $ref: >-
+      paths/v3@groups@{group_id}@assistance-requests@{assistance_request_id}@form.yaml
+  '/v3/groups/{group_id}/assistance-requests/{assistance_request_id}/forms':
+    $ref: >-
+      paths/v3@groups@{group_id}@assistance-requests@{assistance_request_id}@forms.yaml
+  '/v3/groups/{group_id}/assistance-requests/{id}':
+    $ref: 'paths/v3@groups@{group_id}@assistance-requests@{id}.yaml'
+  '/v3/groups/{group_id}/cases':
+    $ref: 'paths/v3@groups@{group_id}@cases.yaml'
+  '/v3/groups/{group_id}/cases/closed':
+    $ref: 'paths/v3@groups@{group_id}@cases@closed.yaml'
+  '/v3/groups/{group_id}/cases/converted':
+    $ref: 'paths/v3@groups@{group_id}@cases@converted.yaml'
+  '/v3/groups/{group_id}/cases/open':
+    $ref: 'paths/v3@groups@{group_id}@cases@open.yaml'
+  '/v3/groups/{group_id}/cases/resolved':
+    $ref: 'paths/v3@groups@{group_id}@cases@resolved.yaml'
+  '/v3/groups/{group_id}/cases/unresolved':
+    $ref: 'paths/v3@groups@{group_id}@cases@unresolved.yaml'
+  '/v3/groups/{group_id}/cases/{service_case_id}/forms/{form_id}/response':
+    $ref: >-
+      paths/v3@groups@{group_id}@cases@{service_case_id}@forms@{form_id}@response.yaml
+  '/v3/groups/{group_id}/cases/{service_case_id}/forms/{id}':
+    $ref: 'paths/v3@groups@{group_id}@cases@{service_case_id}@forms@{id}.yaml'
+  '/v3/groups/{group_id}/contacts':
+    $ref: 'paths/v3@groups@{group_id}@contacts.yaml'
+  '/v3/groups/{group_id}/contacts/filtered/primary-workers/me':
+    $ref: 'paths/v3@groups@{group_id}@contacts@filtered@primary-workers@me.yaml'
+  '/v3/groups/{group_id}/contacts/filtered/primary-workers/{user_id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@filtered@primary-workers@{user_id}.yaml
+  '/v3/groups/{group_id}/contacts/with-intakes':
+    $ref: 'paths/v3@groups@{group_id}@contacts@with-intakes.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/activity-stream/events':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@activity-stream@events.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/activity-stream/events/filter':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@activity-stream@events@filter.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/addresses':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@addresses.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/addresses/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@addresses@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-coordinators':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@care-coordinators.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/addresses':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@addresses.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/addresses/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@addresses@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/email-addresses':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@email-addresses.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/email-addresses/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@email-addresses@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/phone-numbers':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@phone-numbers.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/care-team/members/{member_id}/phone-numbers/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@care-team@members@{member_id}@phone-numbers@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@cases.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/activity-stream/events':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@activity-stream@events.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/activity-stream/events/filter':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@activity-stream@events@filter.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/case-workers/primary':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@case-workers@primary.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/close':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@close.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/documents':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@documents.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/documents/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@documents@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/enrollment':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@enrollment.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/cases/{service_case_id}/forms':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@cases@{service_case_id}@forms.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/documents':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@consents@documents.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/emails':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@consents@emails.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/immediate/accept':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@consents@immediate@accept.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/immediate/reject':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@consents@immediate@reject.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/revoke-consent':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@consents@revoke-consent.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/sms':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@consents@sms.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/consents/web':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@consents@web.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/documents':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@documents.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/documents/assign':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@documents@assign.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/documents/remove':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@documents@remove.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/documents/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@documents@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/email-addresses':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@email-addresses.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/email-addresses/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@email-addresses@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/forms':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@forms.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/forms/{form_id}/response':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@forms@{form_id}@response.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/forms/{form_id}/screenings':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@forms@{form_id}@screenings.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/forms/{form_id}/screenings/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@forms@{form_id}@screenings@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/forms/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@forms@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@households@members.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members-counts':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members-counts.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members-counts/disable':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members-counts@disable.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members-counts/dynamic-count':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members-counts@dynamic-count.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members-counts/enable':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members-counts@enable.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members-counts/static-count':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members-counts@static-count.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/households/members/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@households@members@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/intakes/{intake_id}/documents':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@intakes@{intake_id}@documents.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/intakes/{intake_id}/documents/{id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@intakes@{intake_id}@documents@{id}.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/interactions':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@interactions.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/interactions/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@interactions@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/phone-numbers':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@phone-numbers.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/phone-numbers/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@phone-numbers@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/programs/{program_id}/enrollment':
+    $ref: >-
+      paths/v3@groups@{group_id}@contacts@{contact_id}@programs@{program_id}@enrollment.yaml
+  '/v3/groups/{group_id}/contacts/{contact_id}/referrals':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@referrals.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/referrals/draft':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@referrals@draft.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/referrals/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@referrals@{id}.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/screenings':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@screenings.yaml'
+  '/v3/groups/{group_id}/contacts/{contact_id}/select':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{contact_id}@select.yaml'
+  '/v3/groups/{group_id}/contacts/{id}':
+    $ref: 'paths/v3@groups@{group_id}@contacts@{id}.yaml'
+  '/v3/groups/{group_id}/exports':
+    $ref: 'paths/v3@groups@{group_id}@exports.yaml'
+  '/v3/groups/{group_id}/forms/usage':
+    $ref: 'paths/v3@groups@{group_id}@forms@usage.yaml'
+  '/v3/groups/{group_id}/hours-of-operation':
+    $ref: 'paths/v3@groups@{group_id}@hours-of-operation.yaml'
+  '/v3/groups/{group_id}/invitations':
+    $ref: 'paths/v3@groups@{group_id}@invitations.yaml'
+  '/v3/groups/{group_id}/invitations/{id}':
+    $ref: 'paths/v3@groups@{group_id}@invitations@{id}.yaml'
+  '/v3/groups/{group_id}/invitations/{invitation_id}/reminders':
+    $ref: 'paths/v3@groups@{group_id}@invitations@{invitation_id}@reminders.yaml'
+  '/v3/groups/{group_id}/messages/share-group':
+    $ref: 'paths/v3@groups@{group_id}@messages@share-group.yaml'
+  '/v3/groups/{group_id}/programs':
+    $ref: 'paths/v3@groups@{group_id}@programs.yaml'
+  '/v3/groups/{group_id}/programs/{id}':
+    $ref: 'paths/v3@groups@{group_id}@programs@{id}.yaml'
+  '/v3/groups/{group_id}/programs/{program_id}/users':
+    $ref: 'paths/v3@groups@{group_id}@programs@{program_id}@users.yaml'
+  '/v3/groups/{group_id}/programs/{program_id}/users/{id}':
+    $ref: 'paths/v3@groups@{group_id}@programs@{program_id}@users@{id}.yaml'
+  '/v3/groups/{group_id}/referrals/closed':
+    $ref: 'paths/v3@groups@{group_id}@referrals@closed.yaml'
+  '/v3/groups/{group_id}/referrals/drafts':
+    $ref: 'paths/v3@groups@{group_id}@referrals@drafts.yaml'
+  '/v3/groups/{group_id}/referrals/drafts/{id}':
+    $ref: 'paths/v3@groups@{group_id}@referrals@drafts@{id}.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/accepted':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@accepted.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/auto-recalled':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@auto-recalled.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/awaiting-response':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@awaiting-response.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/closed':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@closed.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/declined-consent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@declined-consent.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/in-review':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@in-review.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/pending-consent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@pending-consent.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/recalled':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@recalled.yaml'
+  '/v3/groups/{group_id}/referrals/open-channel/recalled-or-auto-recalled':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@open-channel@recalled-or-auto-recalled.yaml
+  '/v3/groups/{group_id}/referrals/open-channel/rejected':
+    $ref: 'paths/v3@groups@{group_id}@referrals@open-channel@rejected.yaml'
+  '/v3/groups/{group_id}/referrals/received':
+    $ref: 'paths/v3@groups@{group_id}@referrals@received.yaml'
+  '/v3/groups/{group_id}/referrals/received/in-review':
+    $ref: 'paths/v3@groups@{group_id}@referrals@received@in-review.yaml'
+  '/v3/groups/{group_id}/referrals/received/pending':
+    $ref: 'paths/v3@groups@{group_id}@referrals@received@pending.yaml'
+  '/v3/groups/{group_id}/referrals/received/pending-consent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@received@pending-consent.yaml'
+  '/v3/groups/{group_id}/referrals/received/pending-or-accepted-consent':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@received@pending-or-accepted-consent.yaml
+  '/v3/groups/{group_id}/referrals/sent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent.yaml'
+  '/v3/groups/{group_id}/referrals/sent/accepted':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@accepted.yaml'
+  '/v3/groups/{group_id}/referrals/sent/auto-recalled':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@auto-recalled.yaml'
+  '/v3/groups/{group_id}/referrals/sent/awaiting-response':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@awaiting-response.yaml'
+  '/v3/groups/{group_id}/referrals/sent/closed':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@closed.yaml'
+  '/v3/groups/{group_id}/referrals/sent/declined-consent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@declined-consent.yaml'
+  '/v3/groups/{group_id}/referrals/sent/in-review':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@in-review.yaml'
+  '/v3/groups/{group_id}/referrals/sent/pending-consent':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@pending-consent.yaml'
+  '/v3/groups/{group_id}/referrals/sent/recalled':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@recalled.yaml'
+  '/v3/groups/{group_id}/referrals/sent/recalled-or-auto-recalled':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@recalled-or-auto-recalled.yaml'
+  '/v3/groups/{group_id}/referrals/sent/rejected':
+    $ref: 'paths/v3@groups@{group_id}@referrals@sent@rejected.yaml'
+  '/v3/groups/{group_id}/referrals/{id}':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{id}.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/activity-stream/events':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@activity-stream@events.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/activity-stream/events/filter':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@activity-stream@events@filter.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/close':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@close.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@contact.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact/documents/assign':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@contact@documents@assign.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact/forms/usage':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@contact@forms@usage.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact/forms/{form_id}/response':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@contact@forms@{form_id}@response.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact/forms/{id}':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@contact@forms@{id}.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/contact/programs/{program_id}/enrollment':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@contact@programs@{program_id}@enrollment.yaml
+  '/v3/groups/{group_id}/referrals/{referral_id}/documents':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@documents.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/documents/{id}':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@documents@{id}.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/hold':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@hold.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/reassign':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@reassign.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/recall':
+    $ref: 'paths/v3@groups@{group_id}@referrals@{referral_id}@recall.yaml'
+  '/v3/groups/{group_id}/referrals/{referral_id}/referral-workers/primary':
+    $ref: >-
+      paths/v3@groups@{group_id}@referrals@{referral_id}@referral-workers@primary.yaml
+  '/v3/groups/{group_id}/screenings/{id}':
+    $ref: 'paths/v3@groups@{group_id}@screenings@{id}.yaml'
+  '/v3/groups/{group_id}/search':
+    $ref: 'paths/v3@groups@{group_id}@search.yaml'
+  '/v3/groups/{group_id}/search/contacts/global':
+    $ref: 'paths/v3@groups@{group_id}@search@contacts@global.yaml'
+  '/v3/groups/{group_id}/service-types':
+    $ref: 'paths/v3@groups@{group_id}@service-types.yaml'
+  '/v3/groups/{group_id}/service-types/with-outcomes':
+    $ref: 'paths/v3@groups@{group_id}@service-types@with-outcomes.yaml'
+  '/v3/groups/{group_id}/service-types/{service_type_id}/outcomes':
+    $ref: 'paths/v3@groups@{group_id}@service-types@{service_type_id}@outcomes.yaml'
+  '/v3/groups/{group_id}/service-types/{service_type_id}/sub-types':
+    $ref: 'paths/v3@groups@{group_id}@service-types@{service_type_id}@sub-types.yaml'
+  '/v3/groups/{group_id}/service-types/{service_type_id}/with-outcomes':
+    $ref: >-
+      paths/v3@groups@{group_id}@service-types@{service_type_id}@with-outcomes.yaml
+  '/v3/groups/{group_id}/user-contact-count':
+    $ref: 'paths/v3@groups@{group_id}@user-contact-count.yaml'
+  '/v3/groups/{group_id}/users':
+    $ref: 'paths/v3@groups@{group_id}@users.yaml'
+  '/v3/groups/{group_id}/users/{user_id}':
+    $ref: 'paths/v3@groups@{group_id}@users@{user_id}.yaml'
+  '/v3/groups/{group_id}/users/{user_id}/connections':
+    $ref: 'paths/v3@groups@{group_id}@users@{user_id}@connections.yaml'
+  '/v3/groups/{group_id}/users/{user_id}/system-roles/{system_role_id}':
+    $ref: >-
+      paths/v3@groups@{group_id}@users@{user_id}@system-roles@{system_role_id}.yaml
+  '/v3/groups/{id}':
+    $ref: 'paths/v3@groups@{id}.yaml'
+  '/v3/invites/groups/users/{token}':
+    $ref: 'paths/v3@invites@groups@users@{token}.yaml'
+  '/v3/networks/{network_id}/groups':
+    $ref: 'paths/v3@networks@{network_id}@groups.yaml'
+  '/v3/networks/{network_id}/groups/{group_id}/by-referral-scopes':
+    $ref: 'paths/v3@networks@{network_id}@groups@{group_id}@by-referral-scopes.yaml'
+  '/v3/networks/{network_id}/groups/{group_id}/search':
+    $ref: 'paths/v3@networks@{network_id}@groups@{group_id}@search.yaml'
+  '/v3/networks/{network_id}/groups/{id}':
+    $ref: 'paths/v3@networks@{network_id}@groups@{id}.yaml'
+  '/v3/networks/{network_id}/service-types':
+    $ref: 'paths/v3@networks@{network_id}@service-types.yaml'
+  '/v3/networks/{network_id}/service-types/with-outcomes':
+    $ref: 'paths/v3@networks@{network_id}@service-types@with-outcomes.yaml'
+  '/v3/networks/{network_id}/service-types/{service_type_id}/outcomes':
+    $ref: >-
+      paths/v3@networks@{network_id}@service-types@{service_type_id}@outcomes.yaml
+  '/v3/networks/{network_id}/service-types/{service_type_id}/with-outcomes':
+    $ref: >-
+      paths/v3@networks@{network_id}@service-types@{service_type_id}@with-outcomes.yaml
+  '/v3/networks/{network_id}/users/by-referral-scopes':
+    $ref: 'paths/v3@networks@{network_id}@users@by-referral-scopes.yaml'
+  '/v3/notification-preferences/contacts/{id}':
+    $ref: 'paths/v3@notification-preferences@contacts@{id}.yaml'
+  '/v3/notification-preferences/global-notification-settings/{id}':
+    $ref: 'paths/v3@notification-preferences@global-notification-settings@{id}.yaml'
+  '/v3/notification-preferences/groups/{id}':
+    $ref: 'paths/v3@notification-preferences@groups@{id}.yaml'
+  '/v3/notification-preferences/networks/{id}':
+    $ref: 'paths/v3@notification-preferences@networks@{id}.yaml'
+  /v3/registration:
+    $ref: paths/v3@registration.yaml
+  '/v3/reports/groups/{group_id}/all-time/summaries/actionables':
+    $ref: 'paths/v3@reports@groups@{group_id}@all-time@summaries@actionables.yaml'
+  '/v3/reports/groups/{group_id}/all-time/summaries/counts':
+    $ref: 'paths/v3@reports@groups@{group_id}@all-time@summaries@counts.yaml'
+  '/v3/reports/groups/{group_id}/cases/by-service-type':
+    $ref: 'paths/v3@reports@groups@{group_id}@cases@by-service-type.yaml'
+  '/v3/reports/groups/{group_id}/cases/by-source':
+    $ref: 'paths/v3@reports@groups@{group_id}@cases@by-source.yaml'
+  '/v3/reports/groups/{group_id}/cases/by-status':
+    $ref: 'paths/v3@reports@groups@{group_id}@cases@by-status.yaml'
+  '/v3/reports/groups/{group_id}/cases/closed/by-service-type':
+    $ref: 'paths/v3@reports@groups@{group_id}@cases@closed@by-service-type.yaml'
+  '/v3/reports/groups/{group_id}/cases/closed/service-types/{service_type_id}/by-outcome':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@cases@closed@service-types@{service_type_id}@by-outcome.yaml
+  '/v3/reports/groups/{group_id}/cases/closed/service-types/{service_type_id}/by-sub-type':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@cases@closed@service-types@{service_type_id}@by-sub-type.yaml
+  '/v3/reports/groups/{group_id}/cases/count':
+    $ref: 'paths/v3@reports@groups@{group_id}@cases@count.yaml'
+  '/v3/reports/groups/{group_id}/cases/service-types/{service_type_id}/by-sub-type':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@cases@service-types@{service_type_id}@by-sub-type.yaml
+  '/v3/reports/groups/{group_id}/contacts/by-age':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@by-age.yaml'
+  '/v3/reports/groups/{group_id}/contacts/by-ethnicity':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@by-ethnicity.yaml'
+  '/v3/reports/groups/{group_id}/contacts/by-gender':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@by-gender.yaml'
+  '/v3/reports/groups/{group_id}/contacts/by-race':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@by-race.yaml'
+  '/v3/reports/groups/{group_id}/contacts/count':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@count.yaml'
+  '/v3/reports/groups/{group_id}/contacts/gender/by-age':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@gender@by-age.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/affiliation/by-gender':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@affiliation@by-gender.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/branch-of-service/by-gender':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@branch-of-service@by-gender.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/by-affiliation':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@by-affiliation.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@by-branch-of-service.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/by-deployed':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@by-deployed.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/by-military-discharge':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@by-military-discharge.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/by-service-era':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@by-service-era.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/by-status':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@by-status.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/by-transitioning':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@by-transitioning.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/service-era/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@service-era@by-branch-of-service.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/service-era/by-gender':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@service-era@by-gender.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/status/by-gender':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@military@status@by-gender.yaml'
+  '/v3/reports/groups/{group_id}/contacts/military/transitioning/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@transitioning@by-branch-of-service.yaml
+  '/v3/reports/groups/{group_id}/contacts/military/transitioning/by-gender':
+    $ref: >-
+      paths/v3@reports@groups@{group_id}@contacts@military@transitioning@by-gender.yaml
+  '/v3/reports/groups/{group_id}/contacts/race/by-ethnicity':
+    $ref: 'paths/v3@reports@groups@{group_id}@contacts@race@by-ethnicity.yaml'
+  '/v3/reports/networks/{network_id}/contacts/by-age':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@by-age.yaml'
+  '/v3/reports/networks/{network_id}/contacts/by-ethnicity':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@by-ethnicity.yaml'
+  '/v3/reports/networks/{network_id}/contacts/by-gender':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@by-gender.yaml'
+  '/v3/reports/networks/{network_id}/contacts/by-race':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@by-race.yaml'
+  '/v3/reports/networks/{network_id}/contacts/count':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@count.yaml'
+  '/v3/reports/networks/{network_id}/contacts/gender/by-age':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@gender@by-age.yaml'
+  '/v3/reports/networks/{network_id}/contacts/military/affiliation/by-gender':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@affiliation@by-gender.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/branch-of-service/by-gender':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@branch-of-service@by-gender.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/by-affiliation':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@by-affiliation.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@by-branch-of-service.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/by-deployed':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@military@by-deployed.yaml'
+  '/v3/reports/networks/{network_id}/contacts/military/by-military-discharge':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@by-military-discharge.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/by-service-era':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@by-service-era.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/by-status':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@military@by-status.yaml'
+  '/v3/reports/networks/{network_id}/contacts/military/by-transitioning':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@by-transitioning.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/service-era/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@service-era@by-branch-of-service.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/service-era/by-gender':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@service-era@by-gender.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/status/by-gender':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@status@by-gender.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/transitioning/by-branch-of-service':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@transitioning@by-branch-of-service.yaml
+  '/v3/reports/networks/{network_id}/contacts/military/transitioning/by-gender':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@contacts@military@transitioning@by-gender.yaml
+  '/v3/reports/networks/{network_id}/contacts/race/by-ethnicity':
+    $ref: 'paths/v3@reports@networks@{network_id}@contacts@race@by-ethnicity.yaml'
+  '/v3/reports/networks/{network_id}/groups/count':
+    $ref: 'paths/v3@reports@networks@{network_id}@groups@count.yaml'
+  '/v3/reports/networks/{network_id}/referrals/received/by-organization':
+    $ref: >-
+      paths/v3@reports@networks@{network_id}@referrals@received@by-organization.yaml
+  '/v3/reports/networks/{network_id}/referrals/sent/by-organization':
+    $ref: 'paths/v3@reports@networks@{network_id}@referrals@sent@by-organization.yaml'
+  '/v3/reports/networks/{network_id}/users/count':
+    $ref: 'paths/v3@reports@networks@{network_id}@users@count.yaml'
+  /v3/session/checks:
+    $ref: paths/v3@session@checks.yaml
+  /v3/session/support:
+    $ref: paths/v3@session@support.yaml
+  /v3/users/me/support/zendesk:
+    $ref: paths/v3@users@me@support@zendesk.yaml
+  '/v3/users/{id}':
+    $ref: 'paths/v3@users@{id}.yaml'
+  '/v3/users/{user_id}/2fa':
+    $ref: 'paths/v3@users@{user_id}@2fa.yaml'
+  '/v3/users/{user_id}/2fa/confirmations':
+    $ref: 'paths/v3@users@{user_id}@2fa@confirmations.yaml'
+  '/v3/users/{user_id}/accept-end-user-license-agreements':
+    $ref: 'paths/v3@users@{user_id}@accept-end-user-license-agreements.yaml'
+  '/v3/users/{user_id}/access-tokens':
+    $ref: 'paths/v3@users@{user_id}@access-tokens.yaml'
+  '/v3/users/{user_id}/addresses':
+    $ref: 'paths/v3@users@{user_id}@addresses.yaml'
+  /widgets/assistance-requests:
+    $ref: paths/widgets@assistance-requests.yaml

@@ -1,0 +1,134 @@
+put:
+  tags:
+    - Apiv3groupsassistance requestsclosings
+  summary: Set the selected case to closed and create a closing node
+  operationId: put_v3_groups_group_id_assistance-requests_assistance_request_id_close
+  parameters:
+    - name: assistance_request_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - exited_at
+            - outcome_id
+            - resolved
+          properties:
+            exited_at:
+              type: string
+              description: The date the assistance request was closed
+            outcome_id:
+              type: string
+              description: The id of the outcome this closing is associated with
+            resolved:
+              type: string
+              description: The status of the case
+              enum:
+                - 'true'
+                - 'false'
+            note:
+              type: string
+              description: A note pertaining to the closing
+      multipart/form-data:
+        schema:
+          required:
+            - exited_at
+            - outcome_id
+            - resolved
+          properties:
+            exited_at:
+              type: string
+              description: The date the assistance request was closed
+            outcome_id:
+              type: string
+              description: The id of the outcome this closing is associated with
+            resolved:
+              type: string
+              description: The status of the case
+              enum:
+                - 'true'
+                - 'false'
+            note:
+              type: string
+              description: A note pertaining to the closing
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Apiv3groupsassistance requestsclosings
+  summary: Set the selected case to closed and create a closing node
+  operationId: patch_v3_groups_group_id_assistance-requests_assistance_request_id_close
+  parameters:
+    - name: assistance_request_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - exited_at
+            - outcome_id
+            - resolved
+          properties:
+            exited_at:
+              type: string
+              description: The date the assistance request was closed
+            outcome_id:
+              type: string
+              description: The id of the outcome this closing is associated with
+            resolved:
+              type: string
+              description: The status of the case
+              enum:
+                - 'true'
+                - 'false'
+            note:
+              type: string
+              description: A note pertaining to the closing
+      multipart/form-data:
+        schema:
+          required:
+            - exited_at
+            - outcome_id
+            - resolved
+          properties:
+            exited_at:
+              type: string
+              description: The date the assistance request was closed
+            outcome_id:
+              type: string
+              description: The id of the outcome this closing is associated with
+            resolved:
+              type: string
+              description: The status of the case
+              enum:
+                - 'true'
+                - 'false'
+            note:
+              type: string
+              description: A note pertaining to the closing
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

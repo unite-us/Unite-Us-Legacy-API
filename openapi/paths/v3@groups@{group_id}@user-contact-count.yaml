@@ -1,0 +1,17 @@
+get:
+  tags:
+    - 'Groups: Users With Contacts'
+  summary: >-
+    Returns a list of users and a count of their contacts with open cases or
+    referrals
+  operationId: get_v3_groups_group_id_user-contact-count
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

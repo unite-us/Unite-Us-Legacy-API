@@ -1,0 +1,54 @@
+post:
+  tags:
+    - Documents
+  summary: Assign existing documents to provided resources
+  operationId: post_v3_groups_group_id_referrals_referral_id_contact_documents_assign
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'options[attach_to_contact]':
+              type: boolean
+              description: A boolean specifying whether to attach documents to the contact
+            'options[resource_ids]':
+              type: array
+              description: 'An array of ids for cases, referrals, intakes for a contact'
+              items:
+                type: string
+            document_ids:
+              type: array
+              description: The ids of existing documents
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'options[attach_to_contact]':
+              type: boolean
+              description: A boolean specifying whether to attach documents to the contact
+            'options[resource_ids]':
+              type: array
+              description: 'An array of ids for cases, referrals, intakes for a contact'
+              items:
+                type: string
+            document_ids:
+              type: array
+              description: The ids of existing documents
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

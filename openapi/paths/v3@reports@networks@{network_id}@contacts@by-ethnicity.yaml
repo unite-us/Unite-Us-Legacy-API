@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Network Contacts By Ethnicity Report
+  summary: Returns a snapshot of network contacts by ethnicity
+  operationId: get_v3_reports_networks_network_id_contacts_by-ethnicity
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

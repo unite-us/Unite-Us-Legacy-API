@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 'Groups: User Invitation Reminders'
+  summary: Re-send an invitation to join the selected group.
+  operationId: post_v3_groups_group_id_invitations_invitation_id_reminders
+  parameters:
+    - name: invitation_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

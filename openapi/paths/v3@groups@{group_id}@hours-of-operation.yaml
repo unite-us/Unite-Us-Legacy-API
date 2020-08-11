@@ -1,0 +1,132 @@
+put:
+  tags:
+    - 'Groups: Hours of Operation'
+  summary: Update hours of operation for the selected Group
+  operationId: put_v3_groups_group_id_hours-of-operation
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Groups: Hours of Operation'
+  summary: Add hours of operation to the selected Group
+  operationId: post_v3_groups_group_id_hours-of-operation
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Groups: Hours of Operation'
+  summary: Delete hours of operation for the selected Group
+  operationId: delete_v3_groups_group_id_hours-of-operation
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: Hours of Operation'
+  summary: Update hours of operation for the selected Group
+  operationId: patch_v3_groups_group_id_hours-of-operation
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

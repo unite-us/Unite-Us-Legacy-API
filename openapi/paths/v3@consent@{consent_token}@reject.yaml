@@ -1,0 +1,15 @@
+post:
+  tags:
+    - 'Public: area to Reject Consent Requests that are created via SMS or Email'
+  summary: Rejects consent request that is found
+  operationId: post_v3_consent_consent_token_reject
+  parameters:
+    - name: consent_token
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,56 @@
+post:
+  tags:
+    - Group sharing
+  summary: Sends a message in order to share a group with someone
+  operationId: post_v3_groups_group_id_messages_share-group
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'message[group_id]'
+            - 'message[message_method]'
+            - 'message[to]'
+          properties:
+            'message[group_id]':
+              type: string
+              description: The id of the group to share
+            'message[message_method]':
+              type: string
+              description: How the message is to be sent
+              enum:
+                - email
+                - sms
+            'message[to]':
+              type: string
+              description: The phone number or email address of the recipient
+      multipart/form-data:
+        schema:
+          required:
+            - 'message[group_id]'
+            - 'message[message_method]'
+            - 'message[to]'
+          properties:
+            'message[group_id]':
+              type: string
+              description: The id of the group to share
+            'message[message_method]':
+              type: string
+              description: How the message is to be sent
+              enum:
+                - email
+                - sms
+            'message[to]':
+              type: string
+              description: The phone number or email address of the recipient
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 'Contacts: Program Enrollment'
+  summary: Returns enrollment details for the contact and the selected program.
+  operationId: get_v3_groups_group_id_contacts_contact_id_programs_program_id_enrollment
+  parameters:
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

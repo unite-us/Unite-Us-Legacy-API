@@ -1,0 +1,52 @@
+get:
+  tags:
+    - 'Users: Active Session Management'
+  summary: Returns a list of active API Access Tokens for the current user.
+  operationId: get_v3_users_user_id_access-tokens
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Users: Active Session Management'
+  summary: 'Invalidates the selected token, thus destroying that session.'
+  description: >
+
+    <p>Should be used to selectively invalidate active API tokens for the
+    current
+
+    user. If successful, a <code>204 NO CONTENT</code> response will be
+
+    returned.</p>
+  operationId: delete_v3_users_user_id_access-tokens
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token to destroy.
+      multipart/form-data:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token to destroy.
+  responses:
+    '200':
+      description: ok
+      content: {}

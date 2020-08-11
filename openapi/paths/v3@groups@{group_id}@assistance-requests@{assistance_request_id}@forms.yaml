@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 'Groups -> Assistance Requests: Forms'
+  summary: Returns forms available to the selected assistance request.
+  operationId: get_v3_groups_group_id_assistance-requests_assistance_request_id_forms
+  parameters:
+    - name: assistance_request_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

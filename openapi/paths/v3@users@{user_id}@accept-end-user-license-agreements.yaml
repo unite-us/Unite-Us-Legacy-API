@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 'Users: License Agreements (EULA)'
+  summary: Accept license to use software.
+  description: >
+
+    <p>Accepts the license agreement for the user. A successful registration
+    will
+
+    return a <code>201 CREATED</code> response to the client.</p>
+  operationId: post_v3_users_user_id_accept-end-user-license-agreements
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

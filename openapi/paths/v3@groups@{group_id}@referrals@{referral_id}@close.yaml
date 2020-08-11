@@ -1,0 +1,118 @@
+put:
+  tags:
+    - 'Groups: Closed Referrals'
+  summary: Set the selected referral to closed and create a closing node
+  operationId: put_v3_groups_group_id_referrals_referral_id_close
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'closing[outcome_id]'
+            - 'closing[status]'
+          properties:
+            'closing[outcome_id]':
+              type: string
+              description: The id of the outcome this closing is associated with
+            'closing[status]':
+              type: string
+              description: The status of the case; either `resolved` or `unresolved`.
+              enum:
+                - resolved
+                - unresolved
+            'closing[note]':
+              type: string
+              description: A note pertaining to the closing
+      multipart/form-data:
+        schema:
+          required:
+            - 'closing[outcome_id]'
+            - 'closing[status]'
+          properties:
+            'closing[outcome_id]':
+              type: string
+              description: The id of the outcome this closing is associated with
+            'closing[status]':
+              type: string
+              description: The status of the case; either `resolved` or `unresolved`.
+              enum:
+                - resolved
+                - unresolved
+            'closing[note]':
+              type: string
+              description: A note pertaining to the closing
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: Closed Referrals'
+  summary: Set the selected referral to closed and create a closing node
+  operationId: patch_v3_groups_group_id_referrals_referral_id_close
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'closing[outcome_id]'
+            - 'closing[status]'
+          properties:
+            'closing[outcome_id]':
+              type: string
+              description: The id of the outcome this closing is associated with
+            'closing[status]':
+              type: string
+              description: The status of the case; either `resolved` or `unresolved`.
+              enum:
+                - resolved
+                - unresolved
+            'closing[note]':
+              type: string
+              description: A note pertaining to the closing
+      multipart/form-data:
+        schema:
+          required:
+            - 'closing[outcome_id]'
+            - 'closing[status]'
+          properties:
+            'closing[outcome_id]':
+              type: string
+              description: The id of the outcome this closing is associated with
+            'closing[status]':
+              type: string
+              description: The status of the case; either `resolved` or `unresolved`.
+              enum:
+                - resolved
+                - unresolved
+            'closing[note]':
+              type: string
+              description: A note pertaining to the closing
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

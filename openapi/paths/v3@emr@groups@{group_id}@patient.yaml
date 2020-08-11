@@ -1,0 +1,15 @@
+get:
+  tags:
+    - EMR Context
+  summary: Return patient context
+  operationId: get_v3_emr_groups_group_id_patient
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

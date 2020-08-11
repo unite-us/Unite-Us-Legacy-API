@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'Networks: Service Types'
+  summary: Returns a list of service types that the network supports
+  operationId: get_networks_network_id_service_types
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

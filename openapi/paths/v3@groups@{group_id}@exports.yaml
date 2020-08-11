@@ -1,0 +1,131 @@
+get:
+  tags:
+    - Exports
+  summary: Retrieve a paginated list of all exports belonging to the current group
+  operationId: get_v3_groups_group_id_exports
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - Exports
+  summary: Create a new export
+  operationId: post_v3_groups_group_id_exports
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'export[send_email]'
+            - 'export[target_type]'
+            - 'export[time_field]'
+            - 'export[type]'
+          properties:
+            'export[send_email]':
+              type: boolean
+              description: Should send email?
+            'export[time_field]':
+              type: string
+              description: To which timestamp field should export apply the time constraint
+              enum:
+                - created_at
+                - updated_at
+                - created_or_updated
+            'export[type]':
+              type: string
+              description: Type of export that should be created
+              enum:
+                - assessment
+                - contact
+                - interaction
+                - referral
+                - service_case
+                - service_episode_raw
+                - service_episode_snapshot
+                - user
+            'export[target_type]':
+              type: string
+              description: Type of target that is being provided
+              enum:
+                - network
+                - provider
+            'export[target_ids]':
+              type: array
+              description: >-
+                Array of IDs that identify the targets of the export (ie: Group
+                or Network IDs)
+              items:
+                type: string
+            'export[start_at]':
+              type: string
+              description: Earliest date for export (yyyy-mm-dd)
+            'export[end_at]':
+              type: string
+              description: Ending date for export (yyyy-mm-dd)
+      multipart/form-data:
+        schema:
+          required:
+            - 'export[send_email]'
+            - 'export[target_type]'
+            - 'export[time_field]'
+            - 'export[type]'
+          properties:
+            'export[send_email]':
+              type: boolean
+              description: Should send email?
+            'export[time_field]':
+              type: string
+              description: To which timestamp field should export apply the time constraint
+              enum:
+                - created_at
+                - updated_at
+                - created_or_updated
+            'export[type]':
+              type: string
+              description: Type of export that should be created
+              enum:
+                - assessment
+                - contact
+                - interaction
+                - referral
+                - service_case
+                - service_episode_raw
+                - service_episode_snapshot
+                - user
+            'export[target_type]':
+              type: string
+              description: Type of target that is being provided
+              enum:
+                - network
+                - provider
+            'export[target_ids]':
+              type: array
+              description: >-
+                Array of IDs that identify the targets of the export (ie: Group
+                or Network IDs)
+              items:
+                type: string
+            'export[start_at]':
+              type: string
+              description: Earliest date for export (yyyy-mm-dd)
+            'export[end_at]':
+              type: string
+              description: Ending date for export (yyyy-mm-dd)
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

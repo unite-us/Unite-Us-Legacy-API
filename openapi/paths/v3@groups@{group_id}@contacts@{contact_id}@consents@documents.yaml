@@ -1,0 +1,36 @@
+post:
+  tags:
+    - 'Contacts: Consents - Create and accept a document consent request'
+  summary: Create and Accepts a new document consent request for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_consents_documents
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'consents[documents]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'consents[documents]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

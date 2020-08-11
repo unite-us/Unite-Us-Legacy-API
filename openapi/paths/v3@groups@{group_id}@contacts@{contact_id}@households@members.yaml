@@ -1,0 +1,185 @@
+get:
+  tags:
+    - 'Groups::Contacts::Households::Members'
+  summary: Returns a list of household members for the select contact
+  operationId: get_v3_groups_group_id_contacts_contact_id_households_members
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Groups::Contacts::Households::Members'
+  summary: >-
+    Creates a new household member for a contact. If the new member is not
+    marked as the head_of_household, the parent contact will become the
+    head_of_household
+  operationId: post_v3_groups_group_id_contacts_contact_id_households_members
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'household_member[first_name]'
+            - 'household_member[last_name]'
+          properties:
+            'household_member[last_name]':
+              type: string
+              description: Household Member's last name.
+            'household_member[first_name]':
+              type: string
+              description: Household Member's first name.
+            'household_member[gender]':
+              type: string
+              description: Household Member's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'household_member[title]':
+              type: string
+              description: Household Member's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'household_member[suffix]':
+              type: string
+              description: Household Member's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'household_member[relation_to_primary]':
+              type: string
+              description: Household Member's relationship to the Contact
+              enum:
+                - self
+                - child
+                - spouse
+                - parent
+                - partner
+                - other-relation
+                - non-relation
+            'household_member[date_of_birth]':
+              type: number
+              description: Unix (epoch) timestamp representing the contact's date of birth.
+            'household_member[head_of_household]':
+              type: boolean
+              description: Is the household member the head of the household?
+      multipart/form-data:
+        schema:
+          required:
+            - 'household_member[first_name]'
+            - 'household_member[last_name]'
+          properties:
+            'household_member[last_name]':
+              type: string
+              description: Household Member's last name.
+            'household_member[first_name]':
+              type: string
+              description: Household Member's first name.
+            'household_member[gender]':
+              type: string
+              description: Household Member's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'household_member[title]':
+              type: string
+              description: Household Member's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'household_member[suffix]':
+              type: string
+              description: Household Member's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'household_member[relation_to_primary]':
+              type: string
+              description: Household Member's relationship to the Contact
+              enum:
+                - self
+                - child
+                - spouse
+                - parent
+                - partner
+                - other-relation
+                - non-relation
+            'household_member[date_of_birth]':
+              type: number
+              description: Unix (epoch) timestamp representing the contact's date of birth.
+            'household_member[head_of_household]':
+              type: boolean
+              description: Is the household member the head of the household?
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

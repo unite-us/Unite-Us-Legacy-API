@@ -1,0 +1,62 @@
+get:
+  tags:
+    - 'Networks: Users/Collaborators by Referral Scopes'
+  summary: >-
+    Returns a list of users that are participating in the selected Network or
+    referral scope networks.
+  operationId: get_v3_networks_network_id_users_by-referral-scopes
+  parameters:
+    - name: 'q[group_id]'
+      in: query
+      description: >-
+        Identifier for the origin group used to find referral scopes (with
+        network in scope as origin network)
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[text]'
+      in: query
+      description: All or part of a user's name or email within the network to match.
+      schema:
+        type: string
+    - name: 'q[permitted_networks]'
+      in: query
+      description: Identifiers of networks that should be used to filter referral scopes.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

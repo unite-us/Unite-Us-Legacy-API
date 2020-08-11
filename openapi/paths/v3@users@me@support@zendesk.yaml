@@ -1,0 +1,9 @@
+get:
+  tags:
+    - 'Users: Zendesk Support'
+  summary: Retrieve a user's Zendesk login URL.
+  operationId: get_v3_users_me_support_zendesk
+  responses:
+    '200':
+      description: ok
+      content: {}

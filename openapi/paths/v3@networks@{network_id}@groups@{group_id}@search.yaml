@@ -1,0 +1,187 @@
+post:
+  tags:
+    - Search
+  summary: Search the group using a keyword or phrase.
+  operationId: post_v3_networks_network_id_groups_group_id_search
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'q[coordinates][lat]'
+            - 'q[coordinates][lon]'
+            - 'q[text]'
+          properties:
+            'q[coordinates][lon]':
+              type: number
+              description: Longitude Coordinate
+            'q[coordinates][lat]':
+              type: number
+              description: Latitude Coordinate
+            'q[text]':
+              type: string
+              description: Text to search the index for.
+            'q[service_type_ids]':
+              type: array
+              description: An array of service type IDs to filter on
+              items:
+                type: string
+            'q[distance]':
+              type: string
+              description: >-
+                Either a distance w/ unit OR no distance IOT fetch `any`
+                distance
+            'q[languages]':
+              type: array
+              description: An array of Program Lanugage names to filter on
+              items:
+                type: string
+            'q[accessibility_options]':
+              type: array
+              description: An array of Program Accessibility Option names to filter on
+              items:
+                type: string
+            'q[caters_to]':
+              type: array
+              description: An array of Program Catered To Population names to filter on
+              items:
+                type: string
+            'q[include_home_groups]':
+              type: boolean
+              description: >-
+                Optionally include all groups for any provided
+                `permitted_network` which is the same as `network_id`,
+                regardless of its referral scope
+            'q[include_address_book]':
+              type: boolean
+              description: >-
+                Optionally include address book groups with in network groups
+                for the current group
+            'q[only_address_book]':
+              type: boolean
+              description: Optionally only show address book groups for the current group
+            'q[permitted_networks]':
+              type: array
+              description: >-
+                Identifiers of networks that should be used to determine a
+                referral scope.
+              items:
+                type: string
+            'q[force_sort_by_name]':
+              type: boolean
+              description: >-
+                Optionally force ordering to be a-z even when distance
+                constraint is used
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+      multipart/form-data:
+        schema:
+          required:
+            - 'q[coordinates][lat]'
+            - 'q[coordinates][lon]'
+            - 'q[text]'
+          properties:
+            'q[coordinates][lon]':
+              type: number
+              description: Longitude Coordinate
+            'q[coordinates][lat]':
+              type: number
+              description: Latitude Coordinate
+            'q[text]':
+              type: string
+              description: Text to search the index for.
+            'q[service_type_ids]':
+              type: array
+              description: An array of service type IDs to filter on
+              items:
+                type: string
+            'q[distance]':
+              type: string
+              description: >-
+                Either a distance w/ unit OR no distance IOT fetch `any`
+                distance
+            'q[languages]':
+              type: array
+              description: An array of Program Lanugage names to filter on
+              items:
+                type: string
+            'q[accessibility_options]':
+              type: array
+              description: An array of Program Accessibility Option names to filter on
+              items:
+                type: string
+            'q[caters_to]':
+              type: array
+              description: An array of Program Catered To Population names to filter on
+              items:
+                type: string
+            'q[include_home_groups]':
+              type: boolean
+              description: >-
+                Optionally include all groups for any provided
+                `permitted_network` which is the same as `network_id`,
+                regardless of its referral scope
+            'q[include_address_book]':
+              type: boolean
+              description: >-
+                Optionally include address book groups with in network groups
+                for the current group
+            'q[only_address_book]':
+              type: boolean
+              description: Optionally only show address book groups for the current group
+            'q[permitted_networks]':
+              type: array
+              description: >-
+                Identifiers of networks that should be used to determine a
+                referral scope.
+              items:
+                type: string
+            'q[force_sort_by_name]':
+              type: boolean
+              description: >-
+                Optionally force ordering to be a-z even when distance
+                constraint is used
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

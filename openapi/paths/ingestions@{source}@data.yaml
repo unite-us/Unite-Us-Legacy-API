@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Ingestions
+  summary: Add new draft data to the ingestions queue.
+  operationId: post_ingestions_source_data
+  parameters:
+    - name: source
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

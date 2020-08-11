@@ -1,0 +1,118 @@
+post:
+  tags:
+    - User Registration
+  summary: >-
+    Registers a new user account for the Unite US application. The user may be
+    required to confirm her email address.
+  operationId: post_v3_registration
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'user[email]'
+            - 'user[first_name]'
+            - 'user[last_name]'
+            - 'user[password]'
+            - 'user[password_confirmation]'
+          properties:
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[password_confirmation]':
+              type: string
+              description: Confirmation of the user's password.
+            'user[password]':
+              type: string
+              description: User's preferred password.
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[title]':
+              type: string
+              description: User's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'user[middle_name_initial]':
+              type: string
+              description: User's middle name or initial.
+            'user[suffix]':
+              type: string
+              description: User's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'invitation[token]':
+              type: string
+              description: >-
+                The invitation token used to connect the new user to other
+                resources.
+      multipart/form-data:
+        schema:
+          required:
+            - 'user[email]'
+            - 'user[first_name]'
+            - 'user[last_name]'
+            - 'user[password]'
+            - 'user[password_confirmation]'
+          properties:
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[password_confirmation]':
+              type: string
+              description: Confirmation of the user's password.
+            'user[password]':
+              type: string
+              description: User's preferred password.
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[title]':
+              type: string
+              description: User's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'user[middle_name_initial]':
+              type: string
+              description: User's middle name or initial.
+            'user[suffix]':
+              type: string
+              description: User's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'invitation[token]':
+              type: string
+              description: >-
+                The invitation token used to connect the new user to other
+                resources.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

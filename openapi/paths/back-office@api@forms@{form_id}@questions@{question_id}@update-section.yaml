@@ -1,0 +1,41 @@
+post:
+  tags:
+    - >-
+      Back Office: Update a Questions Section.  Move a question to a nother
+      section
+  summary: Moves the question from its current section to the new one specified.
+  operationId: post_back-office_api_forms_form_id_questions_question_id_update-section
+  parameters:
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'question[section_id]'
+          properties:
+            'question[section_id]':
+              type: string
+              description: The new section ID that we are moving the question to.
+      multipart/form-data:
+        schema:
+          required:
+            - 'question[section_id]'
+          properties:
+            'question[section_id]':
+              type: string
+              description: The new section ID that we are moving the question to.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

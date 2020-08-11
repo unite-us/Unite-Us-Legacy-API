@@ -1,0 +1,40 @@
+post:
+  tags:
+    - 'Groups::Users: Connections'
+  summary: Add a user to the selected group.
+  operationId: post_v3_groups_group_id_users_user_id_connections
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Groups::Users: Connections'
+  summary: Remove the selected user from the selected group.
+  operationId: delete_v3_groups_group_id_users_user_id_connections
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

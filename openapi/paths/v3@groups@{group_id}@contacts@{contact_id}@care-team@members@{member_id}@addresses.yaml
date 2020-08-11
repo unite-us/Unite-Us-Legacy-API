@@ -1,0 +1,109 @@
+post:
+  tags:
+    - 'Care Team Members: Addresses'
+  summary: Add a new address to the selected Care Team Member.
+  operationId: >-
+    post_v3_groups_group_id_contacts_contact_id_care-team_members_member_id_addresses
+  parameters:
+    - name: member_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'address[address_type]'
+            - 'address[city]'
+            - 'address[country]'
+            - 'address[postal_code]'
+            - 'address[state]'
+          properties:
+            'address[country]':
+              type: string
+              description: Country for the address.
+            'address[state]':
+              type: string
+              description: State or province for the address.
+            'address[postal_code]':
+              type: string
+              description: >-
+                Postal or ZIP code for the address. Minimum 5 characters in
+                length, maximum 15.
+            'address[city]':
+              type: string
+              description: City or town of the address.
+            'address[address_type]':
+              type: string
+              description: Type of address.
+              enum:
+                - home
+                - mailing
+                - work
+                - unknown
+            'address[line_1]':
+              type: string
+              description: Address line 1
+            'address[line_2]':
+              type: string
+              description: 'Additional address details, ex. apartment, suite, etc.'
+            'address[is_mailing_address]':
+              type: boolean
+              description: Is this a mailing address.
+      multipart/form-data:
+        schema:
+          required:
+            - 'address[address_type]'
+            - 'address[city]'
+            - 'address[country]'
+            - 'address[postal_code]'
+            - 'address[state]'
+          properties:
+            'address[country]':
+              type: string
+              description: Country for the address.
+            'address[state]':
+              type: string
+              description: State or province for the address.
+            'address[postal_code]':
+              type: string
+              description: >-
+                Postal or ZIP code for the address. Minimum 5 characters in
+                length, maximum 15.
+            'address[city]':
+              type: string
+              description: City or town of the address.
+            'address[address_type]':
+              type: string
+              description: Type of address.
+              enum:
+                - home
+                - mailing
+                - work
+                - unknown
+            'address[line_1]':
+              type: string
+              description: Address line 1
+            'address[line_2]':
+              type: string
+              description: 'Additional address details, ex. apartment, suite, etc.'
+            'address[is_mailing_address]':
+              type: boolean
+              description: Is this a mailing address.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,62 @@
+post:
+  tags:
+    - 'Back Office: Universal Search'
+  summary: Returns results from
+  operationId: post_back-office_api_search_universal
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'q[search_term]'
+          properties:
+            'q[search_term]':
+              type: string
+              description: The keyword or phrase to search for
+            'q[limit_to_attributes]':
+              type: array
+              description: >-
+                An array of strings of attributes to constraint the search by.
+                ['email', 'name']. Can be nil
+              items:
+                type: string
+            'q[return_attributes]':
+              type: array
+              description: >-
+                Array of attributes to return in the serialization of the
+                results. ['name', 'id']
+              items:
+                type: string
+            take:
+              type: number
+              description: The maximum number of results to be returned. Can be nil.
+      multipart/form-data:
+        schema:
+          required:
+            - 'q[search_term]'
+          properties:
+            'q[search_term]':
+              type: string
+              description: The keyword or phrase to search for
+            'q[limit_to_attributes]':
+              type: array
+              description: >-
+                An array of strings of attributes to constraint the search by.
+                ['email', 'name']. Can be nil
+              items:
+                type: string
+            'q[return_attributes]':
+              type: array
+              description: >-
+                Array of attributes to return in the serialization of the
+                results. ['name', 'id']
+              items:
+                type: string
+            take:
+              type: number
+              description: The maximum number of results to be returned. Can be nil.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

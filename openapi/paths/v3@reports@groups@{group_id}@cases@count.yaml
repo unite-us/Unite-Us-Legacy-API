@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Organization Service Cases
+  summary: Returns a snapshot of Organization Service Cases
+  operationId: get_v3_reports_groups_group_id_cases_count
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

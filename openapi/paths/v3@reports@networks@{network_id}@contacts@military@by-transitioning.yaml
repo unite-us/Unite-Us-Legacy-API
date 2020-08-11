@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Network Clients by Military Transitioning Status
+  summary: Returns a snapshot of Network Clients by Military Transitioning Status
+  operationId: get_v3_reports_networks_network_id_contacts_military_by-transitioning
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,29 @@
+post:
+  tags:
+    - 'Public: area to Accept Consent Requests that are created via SMS or Email'
+  summary: Accepts consent and stores captured signature
+  operationId: post_v3_consent_consent_token_accept
+  parameters:
+    - name: consent_token
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'consent[signature_image]':
+              type: string
+              description: Base64 of the signature image
+      multipart/form-data:
+        schema:
+          properties:
+            'consent[signature_image]':
+              type: string
+              description: Base64 of the signature image
+  responses:
+    '200':
+      description: ok
+      content: {}

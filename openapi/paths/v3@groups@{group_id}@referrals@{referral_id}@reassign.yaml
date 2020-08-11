@@ -1,0 +1,68 @@
+put:
+  tags:
+    - 'Groups::Referrals: Reassign Program'
+  summary: Reassigns the referral to another program within the recipient group
+  operationId: put_v3_groups_group_id_referrals_referral_id_reassign
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral[referred_to_program_id]':
+              type: string
+              description: ID of the Program to which the referral should be assigned
+      multipart/form-data:
+        schema:
+          properties:
+            'referral[referred_to_program_id]':
+              type: string
+              description: ID of the Program to which the referral should be assigned
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups::Referrals: Reassign Program'
+  summary: Reassigns the referral to another program within the recipient group
+  operationId: patch_v3_groups_group_id_referrals_referral_id_reassign
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral[referred_to_program_id]':
+              type: string
+              description: ID of the Program to which the referral should be assigned
+      multipart/form-data:
+        schema:
+          properties:
+            'referral[referred_to_program_id]':
+              type: string
+              description: ID of the Program to which the referral should be assigned
+  responses:
+    '200':
+      description: ok
+      content: {}

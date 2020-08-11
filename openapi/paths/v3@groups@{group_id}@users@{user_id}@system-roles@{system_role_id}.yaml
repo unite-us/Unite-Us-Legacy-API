@@ -1,0 +1,50 @@
+post:
+  tags:
+    - 'Groups: Users - System Roles'
+  summary: Add a system-level role for the selected user within the selected group.
+  operationId: post_v3_groups_group_id_users_user_id_system-roles_system_role_id
+  parameters:
+    - name: system_role_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Groups: Users - System Roles'
+  summary: Remove a system-level role from the selected user within the selected group.
+  operationId: delete_v3_groups_group_id_users_user_id_system-roles_system_role_id
+  parameters:
+    - name: system_role_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

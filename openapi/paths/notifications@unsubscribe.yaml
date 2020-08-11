@@ -1,0 +1,24 @@
+get:
+  tags:
+    - 'Notifications: Email Unsubscribe'
+  summary: Attempt to unsubscribe an email from notifications
+  operationId: get_notifications_unsubscribe
+  parameters:
+    - name: email_digest
+      in: query
+      description: >-
+        HMAC digest (sha-256) of notification unsubscribe private key with email
+        wishing to unsubscribe
+      required: true
+      schema:
+        type: string
+    - name: email
+      in: query
+      description: Email wishing to unsubscribe
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

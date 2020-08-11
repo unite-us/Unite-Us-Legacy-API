@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'API: Bootstrap'
+  summary: Returns server-side defined service types for use with client applications.
+  operationId: get_system_bootstrap_service-types
+  parameters:
+    - name: flattened
+      in: query
+      description: Optionally return a flattened list of service types
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,620 @@
+get:
+  tags:
+    - Contacts
+  summary: Returns a list of accessible contacts for the selected Group.
+  operationId: get_v3_groups_group_id_contacts
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - Contacts
+  summary: 'Creates a new contact for the group and, optionally, network.'
+  operationId: post_v3_groups_group_id_contacts
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'contact[first_name]'
+            - 'contact[last_name]'
+          properties:
+            'contact[last_name]':
+              type: string
+              description: Contact's last name.
+            'contact[first_name]':
+              type: string
+              description: Contact's first name.
+            network_id:
+              type: string
+              description: The identifier of the Network the contact is participating in.
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+            'contact[email]':
+              type: string
+              description: Contact's email address.
+            'contact[date_of_birth]':
+              type: number
+              description: Unix (epoch) timestamp representing the contact's date of birth.
+            'contact[gender]':
+              type: string
+              description: Contact's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'contact[citizenship]':
+              type: string
+              description: Contact's specified citizenship.
+              enum:
+                - us-citizen
+                - us-national
+                - lawful-permanent-resident
+                - other
+                - undisclosed
+            'contact[ethnicity]':
+              type: string
+              description: Contact's specified ethnicity.
+              enum:
+                - hispanic-or-latino
+                - not-hispanic-or-latino
+                - undisclosed
+            'contact[marital_status]':
+              type: string
+              description: Contact's specified marital status.
+              enum:
+                - divorced
+                - domestic_partner
+                - married-civil-union
+                - single/never-married
+                - separated
+                - undisclosed
+                - widowed
+            'contact[race]':
+              type: string
+              description: Contact's specified race.
+              enum:
+                - american-indian-alaska-native
+                - asian
+                - black-african-american
+                - native-hawaiian-or-pacific-islander
+                - other-race
+                - undisclosed
+                - white
+            'contact[email_address]':
+              type: string
+              description: Contact's primary email address.
+            'contact[preferred_first_name]':
+              type: string
+              description: Contact's preferred first name.
+            'contact[title]':
+              type: string
+              description: Contact's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'contact[middle_name_initial]':
+              type: string
+              description: Contact's middle name or initial.
+            'contact[suffix]':
+              type: string
+              description: Contact's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'contact[nicknames]':
+              type: array
+              description: Contact's nicknames.
+              items:
+                type: string
+            'contact[preferred_communication_method]':
+              type: string
+              description: Preferred communication method
+              enum:
+                - phone_call
+                - sms
+                - email
+                - no_preference
+            'contact[preferred_communication_time_of_day]':
+              type: string
+              description: Preferred communication time of day
+              enum:
+                - any_time
+                - morning
+                - afternoon
+                - evening
+            'contact[addresses]':
+              type: array
+              items:
+                type: string
+            'contact[email_addresses]':
+              type: array
+              items:
+                type: string
+            'contact[phone_numbers]':
+              type: array
+              items:
+                type: string
+            'contact[military][affiliation]':
+              type: string
+              description: Military affiliation
+              enum:
+                - military_member_or_veteran
+                - spouse
+                - widow
+                - family_member
+                - caregiver
+                - prefer_not_to_disclose
+            'contact[military][current_status]':
+              type: string
+              description: Current military status
+              enum:
+                - active_duty
+                - national_guard
+                - reserve
+                - retiree
+                - veteran
+                - prefer_not_to_disclose
+            'contact[military][currently_transitioning]':
+              type: string
+              description: Is the contact currently transitioning?
+              enum:
+                - yes_12mos_before
+                - yes_12mos_after
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][at_least_one_day_active_duty]':
+              type: string
+              description: Has at least one day of active duty outside of basic training?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][branch]':
+              type: string
+              description: Branch of service
+              enum:
+                - air_force
+                - army
+                - coast_guard
+                - marines
+                - navy
+                - prefer_not_to_disclose
+            'contact[military][service_era]':
+              type: string
+              description: Service era
+              enum:
+                - post_911
+                - persian_gulf
+                - post_vietnam
+                - vietnam
+                - post_korean
+                - korean_war
+                - pre_korean
+                - ww2
+                - merchant_marine
+                - ww1
+                - prefer_not_to_disclose
+            'contact[military][entry_date]':
+              type: number
+              description: Date of entry
+            'contact[military][exit_date]':
+              type: number
+              description: Date of exit
+            'contact[military][deployed]':
+              type: string
+              description: Deployed?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][deployment_starts_at]':
+              type: number
+              description: Deployment start date
+            'contact[military][deployment_ends_at]':
+              type: number
+              description: Deployment end date
+            'contact[military][discharge_type]':
+              type: string
+              description: Discharge type
+              enum:
+                - honorable
+                - general
+                - other_than_honorable
+                - bad_conduct
+                - dishonorable
+                - uncharacterized
+                - other
+                - prefer_not_to_disclose
+            'contact[military][discharged_due_to_disability]':
+              type: string
+              description: >-
+                Discharged or retired from military service for a disability
+                incurred in the line of duty?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][service_connected_disability]':
+              type: string
+              description: Has VA-rated Service-Connected Disability?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][service_connected_disability_rating]':
+              type: string
+              description: Service-Connected Disability Rating
+              enum:
+                - '0'
+                - '10'
+                - '20'
+                - '30'
+                - '40'
+                - '50'
+                - '60'
+                - '70'
+                - '80'
+                - '90'
+                - '100'
+                - prefer_not_to_disclose
+            'contact[military][proof_of_veteran_status]':
+              type: string
+              description: Have proof of veteran status?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][proof_type]':
+              type: string
+              description: Proof type
+              enum:
+                - dd214
+                - va_id
+                - statement_of_service
+                - retiree_id
+                - drivers_license
+                - military_id
+                - other
+                - prefer_not_to_disclose
+            'contact[insurance_ids]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'contact[first_name]'
+            - 'contact[last_name]'
+          properties:
+            'contact[last_name]':
+              type: string
+              description: Contact's last name.
+            'contact[first_name]':
+              type: string
+              description: Contact's first name.
+            network_id:
+              type: string
+              description: The identifier of the Network the contact is participating in.
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+            'contact[email]':
+              type: string
+              description: Contact's email address.
+            'contact[date_of_birth]':
+              type: number
+              description: Unix (epoch) timestamp representing the contact's date of birth.
+            'contact[gender]':
+              type: string
+              description: Contact's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'contact[citizenship]':
+              type: string
+              description: Contact's specified citizenship.
+              enum:
+                - us-citizen
+                - us-national
+                - lawful-permanent-resident
+                - other
+                - undisclosed
+            'contact[ethnicity]':
+              type: string
+              description: Contact's specified ethnicity.
+              enum:
+                - hispanic-or-latino
+                - not-hispanic-or-latino
+                - undisclosed
+            'contact[marital_status]':
+              type: string
+              description: Contact's specified marital status.
+              enum:
+                - divorced
+                - domestic_partner
+                - married-civil-union
+                - single/never-married
+                - separated
+                - undisclosed
+                - widowed
+            'contact[race]':
+              type: string
+              description: Contact's specified race.
+              enum:
+                - american-indian-alaska-native
+                - asian
+                - black-african-american
+                - native-hawaiian-or-pacific-islander
+                - other-race
+                - undisclosed
+                - white
+            'contact[email_address]':
+              type: string
+              description: Contact's primary email address.
+            'contact[preferred_first_name]':
+              type: string
+              description: Contact's preferred first name.
+            'contact[title]':
+              type: string
+              description: Contact's title.
+              enum:
+                - Mr.
+                - Miss
+                - Mrs.
+                - Ms.
+                - Dr.
+            'contact[middle_name_initial]':
+              type: string
+              description: Contact's middle name or initial.
+            'contact[suffix]':
+              type: string
+              description: Contact's suffix.
+              enum:
+                - Jr.
+                - Sr.
+                - III
+                - IV
+                - V
+                - Esq.
+                - Ph.D
+            'contact[nicknames]':
+              type: array
+              description: Contact's nicknames.
+              items:
+                type: string
+            'contact[preferred_communication_method]':
+              type: string
+              description: Preferred communication method
+              enum:
+                - phone_call
+                - sms
+                - email
+                - no_preference
+            'contact[preferred_communication_time_of_day]':
+              type: string
+              description: Preferred communication time of day
+              enum:
+                - any_time
+                - morning
+                - afternoon
+                - evening
+            'contact[addresses]':
+              type: array
+              items:
+                type: string
+            'contact[email_addresses]':
+              type: array
+              items:
+                type: string
+            'contact[phone_numbers]':
+              type: array
+              items:
+                type: string
+            'contact[military][affiliation]':
+              type: string
+              description: Military affiliation
+              enum:
+                - military_member_or_veteran
+                - spouse
+                - widow
+                - family_member
+                - caregiver
+                - prefer_not_to_disclose
+            'contact[military][current_status]':
+              type: string
+              description: Current military status
+              enum:
+                - active_duty
+                - national_guard
+                - reserve
+                - retiree
+                - veteran
+                - prefer_not_to_disclose
+            'contact[military][currently_transitioning]':
+              type: string
+              description: Is the contact currently transitioning?
+              enum:
+                - yes_12mos_before
+                - yes_12mos_after
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][at_least_one_day_active_duty]':
+              type: string
+              description: Has at least one day of active duty outside of basic training?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][branch]':
+              type: string
+              description: Branch of service
+              enum:
+                - air_force
+                - army
+                - coast_guard
+                - marines
+                - navy
+                - prefer_not_to_disclose
+            'contact[military][service_era]':
+              type: string
+              description: Service era
+              enum:
+                - post_911
+                - persian_gulf
+                - post_vietnam
+                - vietnam
+                - post_korean
+                - korean_war
+                - pre_korean
+                - ww2
+                - merchant_marine
+                - ww1
+                - prefer_not_to_disclose
+            'contact[military][entry_date]':
+              type: number
+              description: Date of entry
+            'contact[military][exit_date]':
+              type: number
+              description: Date of exit
+            'contact[military][deployed]':
+              type: string
+              description: Deployed?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][deployment_starts_at]':
+              type: number
+              description: Deployment start date
+            'contact[military][deployment_ends_at]':
+              type: number
+              description: Deployment end date
+            'contact[military][discharge_type]':
+              type: string
+              description: Discharge type
+              enum:
+                - honorable
+                - general
+                - other_than_honorable
+                - bad_conduct
+                - dishonorable
+                - uncharacterized
+                - other
+                - prefer_not_to_disclose
+            'contact[military][discharged_due_to_disability]':
+              type: string
+              description: >-
+                Discharged or retired from military service for a disability
+                incurred in the line of duty?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][service_connected_disability]':
+              type: string
+              description: Has VA-rated Service-Connected Disability?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][service_connected_disability_rating]':
+              type: string
+              description: Service-Connected Disability Rating
+              enum:
+                - '0'
+                - '10'
+                - '20'
+                - '30'
+                - '40'
+                - '50'
+                - '60'
+                - '70'
+                - '80'
+                - '90'
+                - '100'
+                - prefer_not_to_disclose
+            'contact[military][proof_of_veteran_status]':
+              type: string
+              description: Have proof of veteran status?
+              enum:
+                - 'yes'
+                - 'no'
+                - prefer_not_to_disclose
+            'contact[military][proof_type]':
+              type: string
+              description: Proof type
+              enum:
+                - dd214
+                - va_id
+                - statement_of_service
+                - retiree_id
+                - drivers_license
+                - military_id
+                - other
+                - prefer_not_to_disclose
+            'contact[insurance_ids]':
+              type: array
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

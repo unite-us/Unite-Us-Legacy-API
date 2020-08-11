@@ -1,0 +1,116 @@
+get:
+  tags:
+    - 'Cases: Primary Case Worker'
+  summary: Show the primary case worker for the selected case.
+  operationId: >-
+    get_v3_groups_group_id_contacts_contact_id_cases_service_case_id_case-workers_primary
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Cases: Primary Case Worker'
+  summary: Update the primary case worker for the selected case.
+  operationId: >-
+    put_v3_groups_group_id_contacts_contact_id_cases_service_case_id_case-workers_primary
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary case worker.
+      multipart/form-data:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary case worker.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Cases: Primary Case Worker'
+  summary: Update the primary case worker for the selected case.
+  operationId: >-
+    patch_v3_groups_group_id_contacts_contact_id_cases_service_case_id_case-workers_primary
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary case worker.
+      multipart/form-data:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary case worker.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

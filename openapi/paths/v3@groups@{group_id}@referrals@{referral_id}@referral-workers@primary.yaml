@@ -1,0 +1,78 @@
+put:
+  tags:
+    - 'Referrals: Primary Referral Worker'
+  summary: Update the primary referral worker for the selected referral.
+  operationId: put_v3_groups_group_id_referrals_referral_id_referral-workers_primary
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary referral worker.
+      multipart/form-data:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary referral worker.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Referrals: Primary Referral Worker'
+  summary: Update the primary referral worker for the selected referral.
+  operationId: patch_v3_groups_group_id_referrals_referral_id_referral-workers_primary
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary referral worker.
+      multipart/form-data:
+        schema:
+          required:
+            - user_id
+          properties:
+            user_id:
+              type: string
+              description: The ID of the user to be set as the primary referral worker.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

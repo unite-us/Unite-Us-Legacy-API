@@ -1,0 +1,127 @@
+get:
+  tags:
+    - 'Groups: Cases'
+  summary: Returns a list of Cases serviced by the Group.
+  operationId: get_v3_groups_group_id_cases_resolved
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: closed
+      in: query
+      description: >-
+        Boolean value to hide or show only closed cases. Omit for open and
+        closed.
+      schema:
+        type: boolean
+    - name: primary_data_source
+      in: query
+      description: >-
+        Boolean to disable performance optimization for retrieving service
+        cases.
+      schema:
+        type: boolean
+    - name: 'q[service_types]'
+      in: query
+      description: Array of service type uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[groups]'
+      in: query
+      description: Array of group uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[networks]'
+      in: query
+      description: Array of network uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[programs]'
+      in: query
+      description: Array of program uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[care_coordinator_users]'
+      in: query
+      description: Array of user uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[primary_worker_users]'
+      in: query
+      description: Array of user uuids on which to filter.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[resolved]'
+      in: query
+      description: 'Boolean value - true for resolved, false for unresolved. Omit for all.'
+      schema:
+        type: boolean
+    - name: 'q[network_inclusion_scope]'
+      in: query
+      description: Cases in or out of network. Omit for both.
+      schema:
+        type: string
+        enum:
+          - in
+          - out
+    - name: 'q[provider_scope]'
+      in: query
+      description: Case manged by a network or group. Omit for both.
+      schema:
+        type: string
+        enum:
+          - group
+          - network
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

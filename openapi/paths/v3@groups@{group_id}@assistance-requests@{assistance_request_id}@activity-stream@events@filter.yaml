@@ -1,0 +1,95 @@
+post:
+  tags:
+    - 'Assistance Requests: Filter Timeline Events'
+  summary: Returns a list of filtered events.
+  description: |
+
+    <p>Filtered activity stream or timeline events are returned loosely based on
+    the Activity Stream specification (<a
+    href="http://activitystrea.ms">activitystrea.ms</a>).</p>
+
+    <p>Available <code>verb</code> values include: <code>accept</code>,
+    <code>add</code>, <code>assign</code>, <code>close</code>,
+    <code>complete</code>, <code>create</code>, <code>delete</code>,
+    <code>deny</code>, <code>join</code>, <code>leave</code>,
+    <code>open</code>, <code>post</code>, <code>replace</code>,
+    <code>retract</code>, <code>save</code>, <code>send</code>, and
+    <code>update</code>.</p>
+
+    <p>Use the verb, object, and target values to determine the event that
+    occurred.</p>
+  operationId: >-
+    post_v3_groups_group_id_assistance-requests_assistance_request_id_activity-stream_events_filter
+  parameters:
+    - name: assistance_request_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'q[filter_names]':
+              type: string
+              description: Name of filter to be appliied
+              enum:
+                - client_updates
+                - closed_records
+                - notes
+                - record_updates
+                - network_updates
+                - care_team
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+      multipart/form-data:
+        schema:
+          properties:
+            'q[filter_names]':
+              type: string
+              description: Name of filter to be appliied
+              enum:
+                - client_updates
+                - closed_records
+                - notes
+                - record_updates
+                - network_updates
+                - care_team
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+  responses:
+    '200':
+      description: ok
+      content: {}

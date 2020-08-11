@@ -1,0 +1,170 @@
+get:
+  tags:
+    - 'Intake: Documents'
+  summary: Displays a single document.
+  operationId: get_v3_groups_group_id_contacts_contact_id_intakes_intake_id_documents_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: intake_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Intake: Documents'
+  summary: Updates a document.
+  operationId: put_v3_groups_group_id_contacts_contact_id_intakes_intake_id_documents_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: intake_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'document[title]'
+          properties:
+            'document[title]':
+              type: string
+              description: The name associated with the document
+            attach_to_id:
+              type: string
+              description: The ID of the object to change the document attachment to.
+      multipart/form-data:
+        schema:
+          required:
+            - 'document[title]'
+          properties:
+            'document[title]':
+              type: string
+              description: The name associated with the document
+            attach_to_id:
+              type: string
+              description: The ID of the object to change the document attachment to.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Intake: Documents'
+  summary: Deletes an attached document.
+  operationId: delete_v3_groups_group_id_contacts_contact_id_intakes_intake_id_documents_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: intake_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Intake: Documents'
+  summary: Updates a document.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_intakes_intake_id_documents_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: intake_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'document[title]'
+          properties:
+            'document[title]':
+              type: string
+              description: The name associated with the document
+            attach_to_id:
+              type: string
+              description: The ID of the object to change the document attachment to.
+      multipart/form-data:
+        schema:
+          required:
+            - 'document[title]'
+          properties:
+            'document[title]':
+              type: string
+              description: The name associated with the document
+            attach_to_id:
+              type: string
+              description: The ID of the object to change the document attachment to.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

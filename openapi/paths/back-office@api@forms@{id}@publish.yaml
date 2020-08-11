@@ -1,0 +1,36 @@
+put:
+  tags:
+    - 'Back Office: Forms Publish'
+  summary: Touch a form.
+  description: |
+
+    <p>Touch a form in order to make sure that the cache is current.</p>
+  operationId: put_back-office_api_forms_id_publish
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Forms Publish'
+  summary: Touch a form.
+  description: |
+
+    <p>Touch a form in order to make sure that the cache is current.</p>
+  operationId: patch_back-office_api_forms_id_publish
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

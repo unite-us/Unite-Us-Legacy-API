@@ -1,0 +1,72 @@
+post:
+  tags:
+    - 'Users: Two-Factor Authentication (2FA)'
+  summary: Enable a user account to use two-factor authentication (2FA).
+  description: >
+
+    <p>Registers the user with the two-factor authentication service to enable
+    2FA
+
+    on the account. A successful registration will return a <code>201
+
+    CREATED</code> response to the client.</p>
+  operationId: post_v3_users_user_id_2fa
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: The user's mobile phone number. It must be SMS-capable.
+            'phone_number[country_code]':
+              type: number
+              description: >-
+                The user's country code. Defaults to <tt>1</tt>, for United
+                States.
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: The user's mobile phone number. It must be SMS-capable.
+            'phone_number[country_code]':
+              type: number
+              description: >-
+                The user's country code. Defaults to <tt>1</tt>, for United
+                States.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Users: Two-Factor Authentication (2FA)'
+  summary: Disable two-factor authentication (2FA) for the user's account.
+  description: |
+
+    <p>De-registers the user&#39;s account with the two-factor authentication
+    service and removes the 2FA setting for their Unite US account. Successful
+    de-registration will return a <code>204 NO CONTENT</code> response.</p>
+  operationId: delete_v3_users_user_id_2fa
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

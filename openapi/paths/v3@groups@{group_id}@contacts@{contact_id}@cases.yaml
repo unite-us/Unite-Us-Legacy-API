@@ -1,0 +1,133 @@
+get:
+  tags:
+    - Cases
+  summary: Return cases for the selected contact.
+  operationId: get_v3_groups_group_id_contacts_contact_id_cases
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - Cases
+  summary: Create a new case for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_cases
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'program[program_id]'
+            - service_type_id
+          properties:
+            'program[program_id]':
+              type: string
+              description: >-
+                The identifier of the Program the contact and case is being
+                enrolled in.
+            service_type_id:
+              type: string
+              description: The identifier of the requested service type (need).
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the case.
+            'service_case[description]':
+              type: string
+              description: The full-text details or description of the case.
+            'service_case[primary_worker_id]':
+              type: string
+              description: The user ID of the primary case worker.
+            'service_case[documents]':
+              type: array
+              items:
+                type: string
+            'service_case[out_of_network_providers]':
+              type: array
+              items:
+                type: string
+            primary_data_source:
+              type: boolean
+              description: >-
+                Boolean to disable performance optimization for retrieving
+                service cases.
+            network_id:
+              type: string
+              description: The identifier of the Network that is managing the case.
+            'program[entry_date]':
+              type: number
+              description: Timestamp representing the enrollment date.
+      multipart/form-data:
+        schema:
+          required:
+            - 'program[program_id]'
+            - service_type_id
+          properties:
+            'program[program_id]':
+              type: string
+              description: >-
+                The identifier of the Program the contact and case is being
+                enrolled in.
+            service_type_id:
+              type: string
+              description: The identifier of the requested service type (need).
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the case.
+            'service_case[description]':
+              type: string
+              description: The full-text details or description of the case.
+            'service_case[primary_worker_id]':
+              type: string
+              description: The user ID of the primary case worker.
+            'service_case[documents]':
+              type: array
+              items:
+                type: string
+            'service_case[out_of_network_providers]':
+              type: array
+              items:
+                type: string
+            primary_data_source:
+              type: boolean
+              description: >-
+                Boolean to disable performance optimization for retrieving
+                service cases.
+            network_id:
+              type: string
+              description: The identifier of the Network that is managing the case.
+            'program[entry_date]':
+              type: number
+              description: Timestamp representing the enrollment date.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

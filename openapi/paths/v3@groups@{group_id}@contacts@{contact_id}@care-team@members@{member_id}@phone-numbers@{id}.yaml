@@ -1,0 +1,227 @@
+put:
+  tags:
+    - 'Care Team Members: Phone Numbers'
+  summary: Update an existing Care Team Member phone number.
+  operationId: >-
+    put_v3_groups_group_id_contacts_contact_id_care-team_members_member_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: member_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: >-
+                Is this phone number the care team member's primary contact
+                number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: >-
+                Is this phone number the care team member's primary contact
+                number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Care Team Members: Phone Numbers'
+  summary: Remove an existing Care Team Member phone number.
+  operationId: >-
+    delete_v3_groups_group_id_contacts_contact_id_care-team_members_member_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: member_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Care Team Members: Phone Numbers'
+  summary: Update an existing Care Team Member phone number.
+  operationId: >-
+    patch_v3_groups_group_id_contacts_contact_id_care-team_members_member_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: member_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: >-
+                Is this phone number the care team member's primary contact
+                number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: >-
+                Is this phone number the care team member's primary contact
+                number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

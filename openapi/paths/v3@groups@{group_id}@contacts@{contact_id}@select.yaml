@@ -1,0 +1,80 @@
+put:
+  tags:
+    - 'Contacts: Select/Use by Group'
+  summary: Creates a relationship between the selected contact and the Group.
+  operationId: put_v3_groups_group_id_contacts_contact_id_select
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+      multipart/form-data:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contacts: Select/Use by Group'
+  summary: Creates a relationship between the selected contact and the Group.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_select
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+      multipart/form-data:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will cause the API to attempt to transfer data
+                from the assistance request requestor to the Contact.
+  responses:
+    '200':
+      description: ok
+      content: {}

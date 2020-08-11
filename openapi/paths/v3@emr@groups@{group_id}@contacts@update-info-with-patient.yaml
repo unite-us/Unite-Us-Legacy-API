@@ -1,0 +1,15 @@
+put:
+  tags:
+    - EMR Patient Contact Information
+  summary: Update contact information using the current patient's information
+  operationId: put_v3_emr_groups_group_id_contacts_update-info-with-patient
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,138 @@
+get:
+  tags:
+    - 'Networks: Groups'
+  summary: Returns a list of groups that are participating in the selected Network.
+  operationId: get_networks_network_id_groups
+  parameters:
+    - name: 'q[coordinates][lon]'
+      in: query
+      description: Longitude Coordinate
+      required: true
+      schema:
+        type: number
+    - name: 'q[coordinates][lat]'
+      in: query
+      description: Latitude Coordinate
+      required: true
+      schema:
+        type: number
+    - name: 'q[text]'
+      in: query
+      description: Text to search the index for.
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[service_type_ids]'
+      in: query
+      description: An array of service type IDs to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[distance]'
+      in: query
+      description: Either a distance w/ unit OR no distance IOT fetch `any` distance
+      schema:
+        type: string
+    - name: 'q[delivery_options]'
+      in: query
+      description: An array of Program Delivery Method names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[languages]'
+      in: query
+      description: An array of Program Lanugage names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[accessibility_options]'
+      in: query
+      description: An array of Program Accessibility Option names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[payment_options]'
+      in: query
+      description: An array of Program Fee payment options to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[transportation_options]'
+      in: query
+      description: An array of Program Transportation Option names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[caters_to]'
+      in: query
+      description: An array of Program Catered To Population names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[restricted_to]'
+      in: query
+      description: An array of Program Restricted To Population names to filter on
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[include_unlicensed_providers]'
+      in: query
+      description: Optionally include unlicensed providers
+      schema:
+        type: boolean
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

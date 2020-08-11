@@ -1,0 +1,83 @@
+get:
+  tags:
+    - 'Back Office: Forms -> Questions -> Input Options'
+  summary: Returns the input options available for the selected question.
+  operationId: get_back-office_api_forms_form_id_questions_question_id_input-options
+  parameters:
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Back Office: Forms -> Questions -> Input Options'
+  summary: Add a new input option to the selected question.
+  operationId: post_back-office_api_forms_form_id_questions_question_id_input-options
+  parameters:
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'input_option[base_input_option_id]'
+            - 'input_option[display_order]'
+            - 'input_option[option_label]'
+          properties:
+            'input_option[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'input_option[base_input_option_id]':
+              type: string
+              description: >-
+                Identifier of the base input option from the global repository.
+                Required for non create actions.
+            'input_option[option_label]':
+              type: string
+              description: >-
+                The label to be displayed to users completing a form with this
+                question and input option.
+      multipart/form-data:
+        schema:
+          required:
+            - 'input_option[base_input_option_id]'
+            - 'input_option[display_order]'
+            - 'input_option[option_label]'
+          properties:
+            'input_option[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'input_option[base_input_option_id]':
+              type: string
+              description: >-
+                Identifier of the base input option from the global repository.
+                Required for non create actions.
+            'input_option[option_label]':
+              type: string
+              description: >-
+                The label to be displayed to users completing a form with this
+                question and input option.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

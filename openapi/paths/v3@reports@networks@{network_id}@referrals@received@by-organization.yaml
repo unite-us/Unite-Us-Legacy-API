@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Received Referrals by Organization
+  summary: Returns a snapshot of Received Referrals by Organizations
+  operationId: get_v3_reports_networks_network_id_referrals_received_by-organization
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

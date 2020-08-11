@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 'Contacts: Forms'
+  summary: Returns forms available to the selected contact.
+  operationId: get_v3_groups_group_id_contacts_contact_id_forms
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

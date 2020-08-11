@@ -1,0 +1,11 @@
+get:
+  tags:
+    - 'API: Bootstrap'
+  summary: >-
+    Returns server-side defined bootstrap configuration options for use with
+    client applications.
+  operationId: get_system_bootstrap
+  responses:
+    '200':
+      description: ok
+      content: {}

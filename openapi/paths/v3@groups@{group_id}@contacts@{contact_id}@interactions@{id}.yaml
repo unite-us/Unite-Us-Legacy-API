@@ -1,0 +1,90 @@
+put:
+  tags:
+    - 'Contacts: Interactions'
+  summary: Updates an interaction.
+  operationId: put_v3_groups_group_id_contacts_contact_id_interactions_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            collection_class_id:
+              type: string
+              description: ''
+            'interaction[note]':
+              type: string
+              description: Information about the interaction
+      multipart/form-data:
+        schema:
+          properties:
+            collection_class_id:
+              type: string
+              description: ''
+            'interaction[note]':
+              type: string
+              description: Information about the interaction
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contacts: Interactions'
+  summary: Updates an interaction.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_interactions_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            collection_class_id:
+              type: string
+              description: ''
+            'interaction[note]':
+              type: string
+              description: Information about the interaction
+      multipart/form-data:
+        schema:
+          properties:
+            collection_class_id:
+              type: string
+              description: ''
+            'interaction[note]':
+              type: string
+              description: Information about the interaction
+  responses:
+    '200':
+      description: ok
+      content: {}

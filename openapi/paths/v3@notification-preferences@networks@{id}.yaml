@@ -1,0 +1,146 @@
+get:
+  tags:
+    - Notification Preferences for a Network that a User belongs to
+  summary: Returns network notification settings for the current user and a network
+  operationId: get_v3_notification-preferences_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: network_information_updated
+      in: query
+      description: Network information has been updated
+      schema:
+        type: boolean
+    - name: new_program_added
+      in: query
+      description: New program has been added
+      schema:
+        type: boolean
+    - name: network_admin_added
+      in: query
+      description: User has been granted administrator role
+      schema:
+        type: boolean
+    - name: network_user_changes
+      in: query
+      description: 'Changes to users - added to org, removed from org, role changed'
+      schema:
+        type: boolean
+    - name: watch_my_contacts
+      in: query
+      description: Updates and changes to contacts created by user
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - Notification Preferences for a Network that a User belongs to
+  summary: Returns network notification settings for the current user and a network
+  operationId: put_v3_notification-preferences_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            network_information_updated:
+              type: boolean
+              description: Network information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            network_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            network_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+      multipart/form-data:
+        schema:
+          properties:
+            network_information_updated:
+              type: boolean
+              description: Network information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            network_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            network_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Notification Preferences for a Network that a User belongs to
+  summary: Returns network notification settings for the current user and a network
+  operationId: patch_v3_notification-preferences_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            network_information_updated:
+              type: boolean
+              description: Network information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            network_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            network_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+      multipart/form-data:
+        schema:
+          properties:
+            network_information_updated:
+              type: boolean
+              description: Network information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            network_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            network_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+  responses:
+    '200':
+      description: ok
+      content: {}

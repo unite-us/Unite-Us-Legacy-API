@@ -1,0 +1,191 @@
+get:
+  tags:
+    - 'Invitations: User'
+  summary: Returns details for a user using the confirmation/invite token.
+  operationId: get_v3_invites_groups_users_token
+  parameters:
+    - name: token
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Invitations: User'
+  summary: Confirms and updates the user's account.
+  operationId: put_v3_invites_groups_users_token
+  parameters:
+    - name: token
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+      multipart/form-data:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Invitations: User'
+  summary: Confirms and updates the user's account.
+  operationId: patch_v3_invites_groups_users_token
+  parameters:
+    - name: token
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+      multipart/form-data:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

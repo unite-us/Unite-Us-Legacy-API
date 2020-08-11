@@ -1,0 +1,131 @@
+get:
+  tags:
+    - 'Contacts: Referrals'
+  summary: Returns details for the selected referral.
+  operationId: get_v3_groups_group_id_contacts_contact_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Contacts: Referrals'
+  summary: Branchs a referral for the selected contact.
+  operationId: put_v3_groups_group_id_contacts_contact_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contacts: Referrals'
+  summary: Branchs a referral for the selected contact.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

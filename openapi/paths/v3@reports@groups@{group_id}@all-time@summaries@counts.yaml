@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'All-Time Reports: Counts Summary'
+  summary: Returns counts of actionables for the selected organization
+  operationId: get_v3_reports_groups_group_id_all-time_summaries_counts
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

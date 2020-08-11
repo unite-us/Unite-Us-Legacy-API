@@ -1,0 +1,91 @@
+get:
+  tags:
+    - 'Contacts: Referrals'
+  summary: Returns a list of referrals sent on behalf of the Contact.
+  operationId: get_v3_groups_group_id_contacts_contact_id_referrals
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Contacts: Referrals'
+  summary: Create new referral(s) for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_referrals
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            assistance_request_id:
+              type: string
+              description: >-
+                The identifier of an assistance request submitted by the
+                Contact. This will connect the originating assistance request to
+                the referral.
+            referrals:
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

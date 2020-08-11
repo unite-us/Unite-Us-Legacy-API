@@ -1,0 +1,73 @@
+get:
+  tags:
+    - 'Groups: Forms Available for Use'
+  summary: Retrieve a complete group profile.
+  operationId: get_v3_groups_group_id_forms_usage
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[use_type]'
+      in: query
+      description: Limit the available forms returned to the specified use type.
+      schema:
+        type: string
+        enum:
+          - intake
+          - exit
+          - general
+          - screening
+          - any
+    - name: 'q[service_type_ids]'
+      in: query
+      description: Identifiers of the service type(s) being provided.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[network_ids]'
+      in: query
+      description: Identifiers of the Network(s) being used to provide the service.
+      schema:
+        type: string
+    - name: 'q[program_id]'
+      in: query
+      description: Identifier of the Program being used to provide the service.
+      schema:
+        type: string
+    - name: 'q[contact_id]'
+      in: query
+      description: Identifier of the Contact that will be attached to the used forms.
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

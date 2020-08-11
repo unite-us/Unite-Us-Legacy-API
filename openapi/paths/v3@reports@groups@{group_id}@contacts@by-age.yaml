@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Clients by Age
+  summary: Returns a snapshot of Clients by Age
+  operationId: get_v3_reports_groups_group_id_contacts_by-age
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

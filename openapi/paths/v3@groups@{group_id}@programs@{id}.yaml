@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 'Groups: Programs'
+  summary: Returns details of the selected program.
+  operationId: get_v3_groups_group_id_programs_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

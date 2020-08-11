@@ -1,0 +1,42 @@
+post:
+  tags:
+    - 'Authentication: Validate Token'
+  summary: Validates the supplied authentication token.
+  description: >
+
+    <p>Validates the supplied authentication token to allow a client to
+    determine
+
+    if the token is valid or not. A <code>200 OK</code> response will be issued
+
+    to indicate the token is valid. A <code>401 UNAUTHORIZED</code> response
+
+    will be issued to indicate the token is not valid.</p>
+  operationId: post_v3_session_checks
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - access_token
+          properties:
+            access_token:
+              type: string
+              description: >-
+                Bearer token to validate. Should be formatted as 'Bearer
+                TOKEN_VALUE'
+      multipart/form-data:
+        schema:
+          required:
+            - access_token
+          properties:
+            access_token:
+              type: string
+              description: >-
+                Bearer token to validate. Should be formatted as 'Bearer
+                TOKEN_VALUE'
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

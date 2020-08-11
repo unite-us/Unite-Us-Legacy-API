@@ -1,0 +1,214 @@
+get:
+  tags:
+    - Notification Preferences for a Group that a User belongs to
+  summary: Returns group notification settings for the current user and a group
+  operationId: get_v3_notification-preferences_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_information_updated
+      in: query
+      description: Group information has been updated
+      schema:
+        type: boolean
+    - name: new_program_added
+      in: query
+      description: New program has been added
+      schema:
+        type: boolean
+    - name: group_admin_added
+      in: query
+      description: User has been granted administrator role
+      schema:
+        type: boolean
+    - name: group_user_changes
+      in: query
+      description: 'Changes to users - added to org, removed from org, role changed'
+      schema:
+        type: boolean
+    - name: watch_my_contacts
+      in: query
+      description: Updates and changes to contacts created by user
+      schema:
+        type: boolean
+    - name: invitation_expired_for_user
+      in: query
+      description: Invitation expired for user
+      schema:
+        type: boolean
+    - name: group_user_activated_their_account
+      in: query
+      description: User activated their account
+      schema:
+        type: boolean
+    - name: no_remaining_organization_licences
+      in: query
+      description: Organization does not have any remaining licenses
+      schema:
+        type: boolean
+    - name: new_assistance_request
+      in: query
+      description: New assistance request
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - Notification Preferences for a Group that a User belongs to
+  summary: Returns group notification settings for the current user and a group
+  operationId: put_v3_notification-preferences_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            group_information_updated:
+              type: boolean
+              description: Group information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            group_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            group_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+            invitation_expired_for_user:
+              type: boolean
+              description: Invitation expired for user
+            group_user_activated_their_account:
+              type: boolean
+              description: User activated their account
+            no_remaining_organization_licences:
+              type: boolean
+              description: Organization does not have any remaining licenses
+            new_assistance_request:
+              type: boolean
+              description: New assistance request
+      multipart/form-data:
+        schema:
+          properties:
+            group_information_updated:
+              type: boolean
+              description: Group information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            group_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            group_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+            invitation_expired_for_user:
+              type: boolean
+              description: Invitation expired for user
+            group_user_activated_their_account:
+              type: boolean
+              description: User activated their account
+            no_remaining_organization_licences:
+              type: boolean
+              description: Organization does not have any remaining licenses
+            new_assistance_request:
+              type: boolean
+              description: New assistance request
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Notification Preferences for a Group that a User belongs to
+  summary: Returns group notification settings for the current user and a group
+  operationId: patch_v3_notification-preferences_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            group_information_updated:
+              type: boolean
+              description: Group information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            group_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            group_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+            invitation_expired_for_user:
+              type: boolean
+              description: Invitation expired for user
+            group_user_activated_their_account:
+              type: boolean
+              description: User activated their account
+            no_remaining_organization_licences:
+              type: boolean
+              description: Organization does not have any remaining licenses
+            new_assistance_request:
+              type: boolean
+              description: New assistance request
+      multipart/form-data:
+        schema:
+          properties:
+            group_information_updated:
+              type: boolean
+              description: Group information has been updated
+            new_program_added:
+              type: boolean
+              description: New program has been added
+            group_admin_added:
+              type: boolean
+              description: User has been granted administrator role
+            group_user_changes:
+              type: boolean
+              description: 'Changes to users - added to org, removed from org, role changed'
+            watch_my_contacts:
+              type: boolean
+              description: Updates and changes to contacts created by user
+            invitation_expired_for_user:
+              type: boolean
+              description: Invitation expired for user
+            group_user_activated_their_account:
+              type: boolean
+              description: User activated their account
+            no_remaining_organization_licences:
+              type: boolean
+              description: Organization does not have any remaining licenses
+            new_assistance_request:
+              type: boolean
+              description: New assistance request
+  responses:
+    '200':
+      description: ok
+      content: {}

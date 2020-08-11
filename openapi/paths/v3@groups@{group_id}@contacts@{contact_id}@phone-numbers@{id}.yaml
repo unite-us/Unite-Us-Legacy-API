@@ -1,0 +1,229 @@
+put:
+  tags:
+    - 'Contacts: Phone Numbers'
+  summary: Update an existing Contact phone number.
+  operationId: put_v3_groups_group_id_contacts_contact_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: Is this phone number the contact's primary contact number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'phone_number[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - phone_call
+                - message
+                - notification
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: Is this phone number the contact's primary contact number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'phone_number[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - phone_call
+                - message
+                - notification
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Contacts: Phone Numbers'
+  summary: Remove an existing Contact phone number.
+  operationId: delete_v3_groups_group_id_contacts_contact_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contacts: Phone Numbers'
+  summary: Update an existing Contact phone number.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_phone-numbers_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: Is this phone number the contact's primary contact number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'phone_number[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - phone_call
+                - message
+                - notification
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_number[phone_number]'
+          properties:
+            'phone_number[phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'phone_number[is_primary]':
+              type: boolean
+              description: Is this phone number the contact's primary contact number.
+            'phone_number[phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - mobile
+                - home
+                - work
+                - fax
+                - unknown
+            'phone_number[can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_number[country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'phone_number[acceptable_communication_types]':
+              type: string
+              description: Acceptable methods by which to contact the user at this email
+              enum:
+                - phone_call
+                - message
+                - notification
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

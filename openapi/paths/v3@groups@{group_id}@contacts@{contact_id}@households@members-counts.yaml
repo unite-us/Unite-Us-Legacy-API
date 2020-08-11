@@ -1,0 +1,124 @@
+get:
+  tags:
+    - 'Groups::Contacts::Households::MembersCounts'
+  summary: Get the household count
+  operationId: get_v3_groups_group_id_contacts_contact_id_households_members-counts
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Groups::Contacts::Households::MembersCounts'
+  summary: Update a household count
+  operationId: put_v3_groups_group_id_contacts_contact_id_households_members-counts
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            total:
+              type: number
+              description: Total number of members in the Household
+            children:
+              type: number
+              description: Number of children in the Household
+            adults:
+              type: number
+              description: Number of adults in the Household
+            should_enable:
+              type: boolean
+              description: Should the `static_count` be enabled?
+      multipart/form-data:
+        schema:
+          properties:
+            total:
+              type: number
+              description: Total number of members in the Household
+            children:
+              type: number
+              description: Number of children in the Household
+            adults:
+              type: number
+              description: Number of adults in the Household
+            should_enable:
+              type: boolean
+              description: Should the `static_count` be enabled?
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups::Contacts::Households::MembersCounts'
+  summary: Update a household count
+  operationId: patch_v3_groups_group_id_contacts_contact_id_households_members-counts
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            total:
+              type: number
+              description: Total number of members in the Household
+            children:
+              type: number
+              description: Number of children in the Household
+            adults:
+              type: number
+              description: Number of adults in the Household
+            should_enable:
+              type: boolean
+              description: Should the `static_count` be enabled?
+      multipart/form-data:
+        schema:
+          properties:
+            total:
+              type: number
+              description: Total number of members in the Household
+            children:
+              type: number
+              description: Number of children in the Household
+            adults:
+              type: number
+              description: Number of adults in the Household
+            should_enable:
+              type: boolean
+              description: Should the `static_count` be enabled?
+  responses:
+    '200':
+      description: ok
+      content: {}

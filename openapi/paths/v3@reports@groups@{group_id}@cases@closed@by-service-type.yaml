@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Closed Service Cases by Service Type
+  summary: Returns a snapshot of Closed Service Cases by Service Type
+  operationId: get_v3_reports_groups_group_id_cases_closed_by-service-type
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

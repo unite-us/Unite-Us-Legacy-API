@@ -1,0 +1,50 @@
+get:
+  tags:
+    - 'Screenings: Respond to Screening'
+  summary: Displays an index of screenings
+  operationId: get_v3_groups_group_id_contacts_contact_id_forms_form_id_screenings
+  parameters:
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Screenings: Respond to Screening'
+  summary: Creates a new screening
+  operationId: post_v3_groups_group_id_contacts_contact_id_forms_form_id_screenings
+  parameters:
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

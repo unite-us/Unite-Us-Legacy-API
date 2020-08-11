@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'Groups: Service Types Offered along with Outcomes scope to the Group'
+  summary: Returns all service types with outcomes provided by the specified group.
+  operationId: get_v3_groups_group_id_service-types_with-outcomes
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

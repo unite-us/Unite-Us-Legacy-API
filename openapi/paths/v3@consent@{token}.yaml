@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'Public: area to accept/reject consents that are created via SMS or Email'
+  summary: Returns 200 if the consent request is present and not accepted/rejected.
+  operationId: get_v3_consent_token
+  parameters:
+    - name: token
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 'Back Office: Forms -> Questions -> Validators'
+  summary: Creates a new validator for the question.
+  operationId: post_back-office_api_forms_form_id_questions_question_id_validators
+  parameters:
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

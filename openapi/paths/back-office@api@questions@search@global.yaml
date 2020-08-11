@@ -1,0 +1,38 @@
+post:
+  tags:
+    - 'Back Office: Global Questions Search'
+  summary: Returns results from question repository.
+  operationId: post_back-office_api_questions_search_global
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'q[text]'
+          properties:
+            'q[text]':
+              type: string
+              description: >-
+                The keyword or phrase to use when searching the questions
+                repository.
+            'q[search_core]':
+              type: boolean
+              description: 'T/F for if we are searching Forms::Core or Forms::Forms'
+      multipart/form-data:
+        schema:
+          required:
+            - 'q[text]'
+          properties:
+            'q[text]':
+              type: string
+              description: >-
+                The keyword or phrase to use when searching the questions
+                repository.
+            'q[search_core]':
+              type: boolean
+              description: 'T/F for if we are searching Forms::Core or Forms::Forms'
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

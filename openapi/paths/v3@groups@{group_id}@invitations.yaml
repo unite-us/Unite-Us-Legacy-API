@@ -1,0 +1,98 @@
+get:
+  tags:
+    - 'Groups: User Invitations'
+  summary: Returns a list of invitations sent by the selected group.
+  operationId: get_v3_groups_group_id_invitations
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Groups: User Invitations'
+  summary: Creates a new user invitation for the selected group.
+  operationId: post_v3_groups_group_id_invitations
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'invitation[email]'
+            - 'invitation[first_name]'
+            - 'invitation[last_name]'
+          properties:
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+      multipart/form-data:
+        schema:
+          required:
+            - 'invitation[email]'
+            - 'invitation[first_name]'
+            - 'invitation[last_name]'
+          properties:
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,154 @@
+get:
+  tags:
+    - 'Groups: User Invitations'
+  summary: Returns details for an invitation.
+  operationId: get_v3_groups_group_id_invitations_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Groups: User Invitations'
+  summary: Updates an existing user invitation for the selected group.
+  operationId: put_v3_groups_group_id_invitations_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+      multipart/form-data:
+        schema:
+          properties:
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Groups: User Invitations'
+  summary: >-
+    Deletes a user invitation for the selected group. Renders the invitation
+    invalid.
+  operationId: delete_v3_groups_group_id_invitations_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: User Invitations'
+  summary: Updates an existing user invitation for the selected group.
+  operationId: patch_v3_groups_group_id_invitations_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+      multipart/form-data:
+        schema:
+          properties:
+            'invitation[email]':
+              type: string
+              description: Email address where the invitation should be delivered.
+            'invitation[first_name]':
+              type: string
+              description: First name of the invitation recipient.
+            'invitation[last_name]':
+              type: string
+              description: Last name of the invitation recipient.
+            'invitation[send_immediately]':
+              type: boolean
+              description: >-
+                Should the invitation be delivered immediately. Defaults to
+                <tt>false</tt>.
+  responses:
+    '200':
+      description: ok
+      content: {}

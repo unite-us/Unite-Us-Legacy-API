@@ -1,0 +1,294 @@
+get:
+  tags:
+    - 'Groups: Users'
+  summary: Returns a list of users that are part of the selected group.
+  operationId: get_v3_groups_group_id_users
+  parameters:
+    - name: 'user[profile][gender]'
+      in: query
+      description: User's specified gender.
+      required: true
+      schema:
+        type: string
+        enum:
+          - male
+          - female
+          - undisclosed
+          - non-binary
+          - other
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[text]'
+      in: query
+      description: Query to search user's first or last name
+      schema:
+        type: string
+    - name: 'q[employ_state]'
+      in: query
+      description: >-
+        Filter the results returned by the user's employment status with the
+        group.
+      schema:
+        type: string
+        enum:
+          - is_active
+          - is_inactive
+          - any
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+    - name: 'user[email]'
+      in: query
+      description: User's email address.
+      schema:
+        type: string
+    - name: 'user[first_name]'
+      in: query
+      description: User's first name.
+      schema:
+        type: string
+    - name: 'user[last_name]'
+      in: query
+      description: User's last name.
+      schema:
+        type: string
+    - name: 'user[password]'
+      in: query
+      description: 'User''s preferred password, only if changing it.'
+      schema:
+        type: string
+    - name: 'user[password_confirmation]'
+      in: query
+      description: 'Confirmation of user''s preferred password, only if changing it.'
+      schema:
+        type: string
+    - name: 'user[profile][description]'
+      in: query
+      description: User's profile description or bio text.
+      schema:
+        type: string
+    - name: 'user[work_title]'
+      in: query
+      description: User's work title or position name.
+      schema:
+        type: string
+    - name: group_licenses
+      in: query
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: network_licenses
+      in: query
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: role_ids
+      in: query
+      description: Identifiers for the roles to assign to the user.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Groups: Users'
+  summary: 'Creates a new User, Connects it to Group and to a Groups::Role'
+  operationId: post_v3_groups_group_id_users
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'q[text]':
+              type: string
+              description: Query to search user's first or last name
+            'q[employ_state]':
+              type: string
+              description: >-
+                Filter the results returned by the user's employment status with
+                the group.
+              enum:
+                - is_active
+                - is_inactive
+                - any
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+            group_licenses:
+              type: array
+              items:
+                type: string
+            network_licenses:
+              type: array
+              items:
+                type: string
+            role_ids:
+              type: array
+              description: Identifiers for the roles to assign to the user.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'user[profile][gender]'
+          properties:
+            'user[profile][gender]':
+              type: string
+              description: User's specified gender.
+              enum:
+                - male
+                - female
+                - undisclosed
+                - non-binary
+                - other
+            'q[text]':
+              type: string
+              description: Query to search user's first or last name
+            'q[employ_state]':
+              type: string
+              description: >-
+                Filter the results returned by the user's employment status with
+                the group.
+              enum:
+                - is_active
+                - is_inactive
+                - any
+            page:
+              type: number
+              description: The page of results to be returned.
+            per:
+              type: number
+              description: The number of records to be returned per page.
+            sord:
+              type: string
+              description: The order to sort the results.
+              enum:
+                - asc
+                - desc
+            sidx:
+              type: string
+              description: The attribute to sort the results by.
+            'user[email]':
+              type: string
+              description: User's email address.
+            'user[first_name]':
+              type: string
+              description: User's first name.
+            'user[last_name]':
+              type: string
+              description: User's last name.
+            'user[password]':
+              type: string
+              description: 'User''s preferred password, only if changing it.'
+            'user[password_confirmation]':
+              type: string
+              description: 'Confirmation of user''s preferred password, only if changing it.'
+            'user[profile][description]':
+              type: string
+              description: User's profile description or bio text.
+            'user[work_title]':
+              type: string
+              description: User's work title or position name.
+            group_licenses:
+              type: array
+              items:
+                type: string
+            network_licenses:
+              type: array
+              items:
+                type: string
+            role_ids:
+              type: array
+              description: Identifiers for the roles to assign to the user.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,126 @@
+get:
+  tags:
+    - 'Contact: Care Team'
+  summary: Returns the care team members for the selected contact.
+  operationId: get_v3_groups_group_id_contacts_contact_id_care-team_members
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Contact: Care Team'
+  summary: Create a new ad-hoc Care Team member for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_care-team_members
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'member[first_name]'
+            - 'member[last_name]'
+          properties:
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'member[first_name]'
+            - 'member[last_name]'
+          properties:
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

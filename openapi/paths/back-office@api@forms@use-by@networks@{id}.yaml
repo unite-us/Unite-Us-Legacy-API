@@ -1,0 +1,36 @@
+get:
+  tags:
+    - 'Back Office: Use Forms'
+  summary: List forms used by the object.
+  operationId: get_back-office_api_forms_use-by_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: use_type
+      in: query
+      description: How should the form be used.
+      schema:
+        type: string
+        enum:
+          - intake
+          - exit
+          - general
+          - screening
+    - name: service_types
+      in: query
+      description: >-
+        An array of Service Type identifiers that the form usage should be
+        associated with.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

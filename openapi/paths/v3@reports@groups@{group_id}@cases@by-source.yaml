@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Service Cases by Source
+  summary: Returns a snapshot of Service Cases by Source
+  operationId: get_v3_reports_groups_group_id_cases_by-source
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

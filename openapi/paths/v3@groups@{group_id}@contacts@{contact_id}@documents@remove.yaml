@@ -1,0 +1,51 @@
+post:
+  tags:
+    - Document Deletion
+  summary: Create new documents for provided resources
+  operationId: post_v3_groups_group_id_contacts_contact_id_documents_remove
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - document_id
+            - resource_ids
+          properties:
+            resource_ids:
+              type: array
+              description: The ids of the resources from which the document will be removed
+              items:
+                type: string
+            document_id:
+              type: string
+              description: The id of the document to remove
+      multipart/form-data:
+        schema:
+          required:
+            - document_id
+            - resource_ids
+          properties:
+            resource_ids:
+              type: array
+              description: The ids of the resources from which the document will be removed
+              items:
+                type: string
+            document_id:
+              type: string
+              description: The id of the document to remove
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

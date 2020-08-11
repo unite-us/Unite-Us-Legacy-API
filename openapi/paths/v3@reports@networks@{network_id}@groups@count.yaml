@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Unique Network Organizations Report
+  summary: Returns a snapshot of total unique network groups
+  operationId: get_v3_reports_networks_network_id_groups_count
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

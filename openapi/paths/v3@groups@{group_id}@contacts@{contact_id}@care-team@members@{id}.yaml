@@ -1,0 +1,187 @@
+put:
+  tags:
+    - 'Contact: Care Team'
+  summary: Updates an existing ad-hoc Care Team member for the selected contact.
+  operationId: put_v3_groups_group_id_contacts_contact_id_care-team_members_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Contact: Care Team'
+  summary: Removes an ad-hoc Care Team member from the selected contact.
+  operationId: delete_v3_groups_group_id_contacts_contact_id_care-team_members_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Contact: Care Team'
+  summary: Updates an existing ad-hoc Care Team member for the selected contact.
+  operationId: patch_v3_groups_group_id_contacts_contact_id_care-team_members_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'member[first_name]':
+              type: string
+              description: Team member's first name.
+            'member[last_name]':
+              type: string
+              description: Team member's last name.
+            'member[email]':
+              type: string
+              description: Team member's email address.
+            'member[relation_to_contact]':
+              type: string
+              description: Team member's relation to the contact.
+            'member[addresses]':
+              type: array
+              items:
+                type: string
+            'member[email_addresses]':
+              type: array
+              items:
+                type: string
+            'member[phone_numbers]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

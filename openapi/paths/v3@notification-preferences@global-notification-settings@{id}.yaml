@@ -1,0 +1,110 @@
+get:
+  tags:
+    - Global Notification Settings for Users
+  summary: Shows global notification settings for the user
+  operationId: get_v3_notification-preferences_global-notification-settings_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: email_updates_enabled
+      in: query
+      description: Global email on/off settings
+      schema:
+        type: boolean
+    - name: update_when_someone_mentions_me
+      in: query
+      description: Methods to alert the user
+      schema:
+        type: string
+        enum:
+          - 'off'
+          - email_only
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - Global Notification Settings for Users
+  summary: Updates global notification settings for the user
+  operationId: put_v3_notification-preferences_global-notification-settings_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            email_updates_enabled:
+              type: boolean
+              description: Global email on/off settings
+            update_when_someone_mentions_me:
+              type: string
+              description: Methods to alert the user
+              enum:
+                - 'off'
+                - email_only
+      multipart/form-data:
+        schema:
+          properties:
+            email_updates_enabled:
+              type: boolean
+              description: Global email on/off settings
+            update_when_someone_mentions_me:
+              type: string
+              description: Methods to alert the user
+              enum:
+                - 'off'
+                - email_only
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Global Notification Settings for Users
+  summary: Updates global notification settings for the user
+  operationId: patch_v3_notification-preferences_global-notification-settings_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            email_updates_enabled:
+              type: boolean
+              description: Global email on/off settings
+            update_when_someone_mentions_me:
+              type: string
+              description: Methods to alert the user
+              enum:
+                - 'off'
+                - email_only
+      multipart/form-data:
+        schema:
+          properties:
+            email_updates_enabled:
+              type: boolean
+              description: Global email on/off settings
+            update_when_someone_mentions_me:
+              type: string
+              description: Methods to alert the user
+              enum:
+                - 'off'
+                - email_only
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'Networks: Service Types Offered'
+  summary: Returns all service types provided by the specified network.
+  operationId: get_v3_networks_network_id_service-types
+  parameters:
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

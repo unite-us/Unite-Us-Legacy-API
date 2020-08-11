@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Service Cases by Status
+  summary: Returns a snapshot of Service Cases by Status
+  operationId: get_v3_reports_groups_group_id_cases_by-status
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

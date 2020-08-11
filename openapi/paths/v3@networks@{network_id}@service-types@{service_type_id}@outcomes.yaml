@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 'Networks Service Types: Outcomes'
+  summary: Returns all outcomes provided by the specified network service_type.
+  operationId: get_v3_networks_network_id_service-types_service_type_id_outcomes
+  parameters:
+    - name: service_type_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

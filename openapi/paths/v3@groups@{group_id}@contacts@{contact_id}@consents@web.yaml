@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 'Contacts: Consents - Create consent request URL'
+  summary: Create new consent request URL for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_consents_web
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

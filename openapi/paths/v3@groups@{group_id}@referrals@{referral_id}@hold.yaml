@@ -1,0 +1,80 @@
+put:
+  tags:
+    - 'Groups::Referrals: Hold'
+  summary: Places the Referral into a status of IN_REVIEW
+  operationId: put_v3_groups_group_id_referrals_referral_id_hold
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral_hold[reason]':
+              type: string
+              description: A reason for the referral being put in review.
+            'referral_hold[note]':
+              type: string
+              description: A note concerning the referral being put in review.
+      multipart/form-data:
+        schema:
+          properties:
+            'referral_hold[reason]':
+              type: string
+              description: A reason for the referral being put in review.
+            'referral_hold[note]':
+              type: string
+              description: A note concerning the referral being put in review.
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups::Referrals: Hold'
+  summary: Places the Referral into a status of IN_REVIEW
+  operationId: patch_v3_groups_group_id_referrals_referral_id_hold
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral_hold[reason]':
+              type: string
+              description: A reason for the referral being put in review.
+            'referral_hold[note]':
+              type: string
+              description: A note concerning the referral being put in review.
+      multipart/form-data:
+        schema:
+          properties:
+            'referral_hold[reason]':
+              type: string
+              description: A reason for the referral being put in review.
+            'referral_hold[note]':
+              type: string
+              description: A note concerning the referral being put in review.
+  responses:
+    '200':
+      description: ok
+      content: {}

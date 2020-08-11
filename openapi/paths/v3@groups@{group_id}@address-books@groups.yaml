@@ -1,0 +1,152 @@
+post:
+  tags:
+    - Address Book Groups
+  summary: Create a new address book group profile.
+  operationId: post_v3_groups_group_id_address-books_groups
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'phone_numbers[phone_number][phone_number]'
+          properties:
+            'phone_numbers[phone_number][phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'group[name]':
+              type: string
+              description: The name of the address book group.
+            'group[description]':
+              type: string
+              description: Description of the address book group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[status]':
+              type: string
+              description: Status of the address book group
+              enum:
+                - draft
+                - in_review
+                - published
+                - archived
+            'group[primary_contact_name]':
+              type: string
+              description: Primary contact name of the address book group
+            email_addresses:
+              type: array
+              items:
+                type: string
+            addresses:
+              type: array
+              items:
+                type: string
+            'phone_numbers[phone_number][is_primary]':
+              type: boolean
+              description: Is this phone number the group's primary group number
+            'phone_numbers[phone_number][phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - work
+                - mobile
+                - fax
+                - unknown
+            'phone_numbers[phone_number][can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_numbers[phone_number][country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+            service_types:
+              type: array
+              description: The uuids of the service type(s)
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'phone_numbers[phone_number][phone_number]'
+          properties:
+            'phone_numbers[phone_number][phone_number]':
+              type: string
+              description: >-
+                The phone number itself. Minimum 7 digits, only numbers will be
+                stored.
+            'group[name]':
+              type: string
+              description: The name of the address book group.
+            'group[description]':
+              type: string
+              description: Description of the address book group
+            'group[founded_year]':
+              type: number
+              description: The year the group was founded.
+            'group[status]':
+              type: string
+              description: Status of the address book group
+              enum:
+                - draft
+                - in_review
+                - published
+                - archived
+            'group[primary_contact_name]':
+              type: string
+              description: Primary contact name of the address book group
+            email_addresses:
+              type: array
+              items:
+                type: string
+            addresses:
+              type: array
+              items:
+                type: string
+            'phone_numbers[phone_number][is_primary]':
+              type: boolean
+              description: Is this phone number the group's primary group number
+            'phone_numbers[phone_number][phone_type]':
+              type: string
+              description: Type of phone number.
+              enum:
+                - work
+                - mobile
+                - fax
+                - unknown
+            'phone_numbers[phone_number][can_sms]':
+              type: boolean
+              description: Can this phone number receive SMS?
+            'phone_numbers[phone_number][country_code]':
+              type: string
+              description: >-
+                Country code for the phone number. Defaults to <tt>1</tt>, if
+                not specified.
+            'schedule[week]':
+              type: array
+              description: The hours of operation for the provided day
+              items:
+                type: string
+            service_types:
+              type: array
+              description: The uuids of the service type(s)
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

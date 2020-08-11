@@ -1,0 +1,20 @@
+post:
+  tags:
+    - EMR Patient Contact association
+  summary: Associates an existing contact with an emr patient
+  operationId: post_v3_emr_groups_group_id_contacts_contact_id_associate
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

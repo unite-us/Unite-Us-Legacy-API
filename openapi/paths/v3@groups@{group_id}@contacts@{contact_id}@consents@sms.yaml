@@ -1,0 +1,39 @@
+post:
+  tags:
+    - 'Contacts: Consents - Create an sms consent request'
+  summary: Create new sms consent request for the selected contact.
+  operationId: post_v3_groups_group_id_contacts_contact_id_consents_sms
+  parameters:
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'consents[phone_number]'
+          properties:
+            'consents[phone_number]':
+              type: string
+              description: Phone number to deliver the consent request to.
+      multipart/form-data:
+        schema:
+          required:
+            - 'consents[phone_number]'
+          properties:
+            'consents[phone_number]':
+              type: string
+              description: Phone number to deliver the consent request to.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

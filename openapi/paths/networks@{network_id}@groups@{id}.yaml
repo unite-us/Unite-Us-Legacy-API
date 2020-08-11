@@ -1,0 +1,20 @@
+get:
+  tags:
+    - 'Networks: Groups'
+  summary: Returns details about the selected Network group.
+  operationId: get_networks_network_id_groups_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

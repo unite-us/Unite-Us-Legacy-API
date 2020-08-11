@@ -1,0 +1,25 @@
+get:
+  tags:
+    - 'Groups: Service Case Contact Forms'
+  summary: Returns form details with any existing responses spliced into the question.
+  operationId: get_v3_groups_group_id_cases_service_case_id_forms_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

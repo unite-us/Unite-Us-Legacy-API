@@ -1,0 +1,75 @@
+put:
+  tags:
+    - 'Groups: Program Users'
+  summary: Updates a user's access to the selected program.
+  operationId: put_v3_groups_group_id_programs_program_id_users_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Groups: Program Users'
+  summary: Removes a user from the selected program.
+  operationId: delete_v3_groups_group_id_programs_program_id_users_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: Program Users'
+  summary: Updates a user's access to the selected program.
+  operationId: patch_v3_groups_group_id_programs_program_id_users_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

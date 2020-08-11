@@ -1,0 +1,79 @@
+put:
+  tags:
+    - 'Back Office: Forms -> Questions -> Validators'
+  summary: >-
+    Updates a question validator. The validator type cannot be changed via this
+    method.
+  operationId: put_back-office_api_forms_form_id_questions_question_id_validators_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Back Office: Forms -> Questions -> Validators'
+  summary: Permanently delete a validator from a question.
+  operationId: delete_back-office_api_forms_form_id_questions_question_id_validators_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Forms -> Questions -> Validators'
+  summary: >-
+    Updates a question validator. The validator type cannot be changed via this
+    method.
+  operationId: patch_back-office_api_forms_form_id_questions_question_id_validators_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: question_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

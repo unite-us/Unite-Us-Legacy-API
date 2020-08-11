@@ -1,0 +1,74 @@
+post:
+  tags:
+    - Search
+  summary: Search the group using a keyword or phrase.
+  operationId: post_v3_groups_group_id_search
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'q[text]'
+          properties:
+            'q[text]':
+              type: string
+              description: Text to search the index for.
+            'q[include]':
+              type: string
+              description: >-
+                An array of the types of models to include in the search.
+                Defaults to "any".
+              enum:
+                - any
+                - cases_servicecase
+                - contact
+                - document
+                - interactions_base
+                - referrals_referral
+            v:
+              type: string
+              description: >-
+                Indicates which version of search to execute. A value of "v2"
+                indicates to use the "grouped" by type search type.
+              enum:
+                - v1
+                - v2
+      multipart/form-data:
+        schema:
+          required:
+            - 'q[text]'
+          properties:
+            'q[text]':
+              type: string
+              description: Text to search the index for.
+            'q[include]':
+              type: string
+              description: >-
+                An array of the types of models to include in the search.
+                Defaults to "any".
+              enum:
+                - any
+                - cases_servicecase
+                - contact
+                - document
+                - interactions_base
+                - referrals_referral
+            v:
+              type: string
+              description: >-
+                Indicates which version of search to execute. A value of "v2"
+                indicates to use the "grouped" by type search type.
+              enum:
+                - v1
+                - v2
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

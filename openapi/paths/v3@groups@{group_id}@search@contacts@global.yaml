@@ -1,0 +1,72 @@
+post:
+  tags:
+    - 'Groups: Search -> Global Contacts'
+  summary: Search the group's contacts using a keyword or phrase.
+  operationId: post_v3_groups_group_id_search_contacts_global
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'q[first_name]'
+            - 'q[last_name]'
+          properties:
+            'q[last_name]':
+              type: string
+              description: Last name of contact being queried.
+            'q[first_name]':
+              type: string
+              description: First name of the contact being queried.
+            'q[ssn]':
+              type: string
+              description: >-
+                Complete Social Security Number of contact being queried. (not
+                yet supported)
+            'q[ssn_last4]':
+              type: string
+              description: >-
+                Last 4 digits of Social Security Number of contact being
+                queried. (not yet supported)
+            'q[date_of_birth]':
+              type: string
+              description: >-
+                UNIX timestamp representing the birth date of the contact being
+                queried.
+      multipart/form-data:
+        schema:
+          required:
+            - 'q[first_name]'
+            - 'q[last_name]'
+          properties:
+            'q[last_name]':
+              type: string
+              description: Last name of contact being queried.
+            'q[first_name]':
+              type: string
+              description: First name of the contact being queried.
+            'q[ssn]':
+              type: string
+              description: >-
+                Complete Social Security Number of contact being queried. (not
+                yet supported)
+            'q[ssn_last4]':
+              type: string
+              description: >-
+                Last 4 digits of Social Security Number of contact being
+                queried. (not yet supported)
+            'q[date_of_birth]':
+              type: string
+              description: >-
+                UNIX timestamp representing the birth date of the contact being
+                queried.
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

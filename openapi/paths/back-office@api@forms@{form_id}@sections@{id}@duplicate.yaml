@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 'Back Office: Duplicate a section and all its children'
+  summary: Duplicate the specified form and return the duplicated form.
+  operationId: post_back-office_api_forms_form_id_sections_id_duplicate
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

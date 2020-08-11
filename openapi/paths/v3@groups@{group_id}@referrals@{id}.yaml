@@ -1,0 +1,140 @@
+get:
+  tags:
+    - 'Groups: Referrals'
+  summary: Returns details for the selected referral.
+  operationId: get_v3_groups_group_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Groups: Referrals'
+  summary: Updates the details of the selected referral.
+  operationId: put_v3_groups_group_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral[description]':
+              type: string
+              description: Referral notes or description.
+            'referral[referred_by_network_id]':
+              type: string
+              description: Network from which the referral will be sent.
+            'referral[referred_to_network_id]':
+              type: string
+              description: Network to which the referral will be sent.
+            'referral[service_type]':
+              type: string
+              description: Service type for the referral.
+            'referral[documents]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'referral[description]':
+              type: string
+              description: Referral notes or description.
+            'referral[referred_by_network_id]':
+              type: string
+              description: Network from which the referral will be sent.
+            'referral[referred_to_network_id]':
+              type: string
+              description: Network to which the referral will be sent.
+            'referral[service_type]':
+              type: string
+              description: Service type for the referral.
+            'referral[documents]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: Referrals'
+  summary: Updates the details of the selected referral.
+  operationId: patch_v3_groups_group_id_referrals_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'referral[description]':
+              type: string
+              description: Referral notes or description.
+            'referral[referred_by_network_id]':
+              type: string
+              description: Network from which the referral will be sent.
+            'referral[referred_to_network_id]':
+              type: string
+              description: Network to which the referral will be sent.
+            'referral[service_type]':
+              type: string
+              description: Service type for the referral.
+            'referral[documents]':
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            'referral[description]':
+              type: string
+              description: Referral notes or description.
+            'referral[referred_by_network_id]':
+              type: string
+              description: Network from which the referral will be sent.
+            'referral[referred_to_network_id]':
+              type: string
+              description: Network to which the referral will be sent.
+            'referral[service_type]':
+              type: string
+              description: Service type for the referral.
+            'referral[documents]':
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

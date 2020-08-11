@@ -1,0 +1,269 @@
+put:
+  tags:
+    - 'Back Office: Use Forms'
+  summary: Add the selected form to the object.
+  operationId: put_back-office_api_forms_form_id_use-by_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'usage[current_use_type]'
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used now.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[current_use_type]':
+              type: string
+              description: How should the form is currently being used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'usage[current_use_type]'
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used now.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[current_use_type]':
+              type: string
+              description: How should the form is currently being used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - 'Back Office: Use Forms'
+  summary: Add the selected form to the object.
+  operationId: post_back-office_api_forms_form_id_use-by_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Back Office: Use Forms'
+  summary: Remove the selected form from the object.
+  operationId: delete_back-office_api_forms_form_id_use-by_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            use_type:
+              type: string
+              description: How should the form be used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+      multipart/form-data:
+        schema:
+          properties:
+            use_type:
+              type: string
+              description: How should the form be used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Use Forms'
+  summary: Add the selected form to the object.
+  operationId: patch_back-office_api_forms_form_id_use-by_networks_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'usage[current_use_type]'
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used now.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[current_use_type]':
+              type: string
+              description: How should the form is currently being used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          required:
+            - 'usage[current_use_type]'
+            - 'usage[use_type]'
+          properties:
+            'usage[use_type]':
+              type: string
+              description: How should the form be used now.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[current_use_type]':
+              type: string
+              description: How should the form is currently being used.
+              enum:
+                - intake
+                - exit
+                - general
+                - screening
+            'usage[service_types]':
+              type: array
+              description: >-
+                An array of Service Type identifiers that the form usage should
+                be associated with.
+              items:
+                type: string
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

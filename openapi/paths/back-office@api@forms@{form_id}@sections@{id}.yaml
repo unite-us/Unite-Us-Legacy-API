@@ -1,0 +1,167 @@
+put:
+  tags:
+    - 'Back Office: Forms -> Sections'
+  summary: Update an existing form section.
+  operationId: put_back-office_api_forms_form_id_sections_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'section[display_name]'
+            - 'section[display_order]'
+            - 'section[name]'
+          properties:
+            'section[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'section[display_name]':
+              type: boolean
+              description: Should the name of the section be displayed to the user.
+            'section[name]':
+              type: string
+              description: The name of the section.
+            'section[section_type]':
+              type: string
+              description: >-
+                The type of the section. A break would typically appear as a
+                horizontal rule or similar on a form.
+              enum:
+                - form_group
+                - break
+      multipart/form-data:
+        schema:
+          required:
+            - 'section[display_name]'
+            - 'section[display_order]'
+            - 'section[name]'
+          properties:
+            'section[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'section[display_name]':
+              type: boolean
+              description: Should the name of the section be displayed to the user.
+            'section[name]':
+              type: string
+              description: The name of the section.
+            'section[section_type]':
+              type: string
+              description: >-
+                The type of the section. A break would typically appear as a
+                horizontal rule or similar on a form.
+              enum:
+                - form_group
+                - break
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}
+delete:
+  tags:
+    - 'Back Office: Forms -> Sections'
+  summary: Remove a section from the selected form.
+  description: |
+
+    <p>Deletes the section from the form, but does NOT delete the questions from
+    the form. Questions contained within a deleted section will be categorized
+    as not in a section.</p>
+  operationId: delete_back-office_api_forms_form_id_sections_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Forms -> Sections'
+  summary: Update an existing form section.
+  operationId: patch_back-office_api_forms_form_id_sections_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - 'section[display_name]'
+            - 'section[display_order]'
+            - 'section[name]'
+          properties:
+            'section[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'section[display_name]':
+              type: boolean
+              description: Should the name of the section be displayed to the user.
+            'section[name]':
+              type: string
+              description: The name of the section.
+            'section[section_type]':
+              type: string
+              description: >-
+                The type of the section. A break would typically appear as a
+                horizontal rule or similar on a form.
+              enum:
+                - form_group
+                - break
+      multipart/form-data:
+        schema:
+          required:
+            - 'section[display_name]'
+            - 'section[display_order]'
+            - 'section[name]'
+          properties:
+            'section[display_order]':
+              type: number
+              description: The position within the form that this section should appear.
+            'section[display_name]':
+              type: boolean
+              description: Should the name of the section be displayed to the user.
+            'section[name]':
+              type: string
+              description: The name of the section.
+            'section[section_type]':
+              type: string
+              description: >-
+                The type of the section. A break would typically appear as a
+                horizontal rule or similar on a form.
+              enum:
+                - form_group
+                - break
+    required: true
+  responses:
+    '200':
+      description: ok
+      content: {}

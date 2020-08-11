@@ -1,0 +1,103 @@
+get:
+  tags:
+    - 'Back Office: Forms'
+  summary: Returns details of the selected form.
+  operationId: get_back-office_api_forms_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - 'Back Office: Forms'
+  summary: Update an existing form.
+  description: |
+
+    <p>Apply an update to an existing group form.</p>
+  operationId: put_back-office_api_forms_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+      multipart/form-data:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Back Office: Forms'
+  summary: Update an existing form.
+  description: |
+
+    <p>Apply an update to an existing group form.</p>
+  operationId: patch_back-office_api_forms_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+      multipart/form-data:
+        schema:
+          properties:
+            'form[name]':
+              type: string
+              description: Name of the form.
+            'form[notes_text]':
+              type: string
+              description: Additional notes or description to help identify the form.
+            'form[is_active]':
+              type: boolean
+              description: Is the form active or inactive.
+  responses:
+    '200':
+      description: ok
+      content: {}

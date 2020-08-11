@@ -1,0 +1,68 @@
+get:
+  tags:
+    - 'Groups: Cases Converted from Sent Referrals'
+  summary: Returns a list of Cases converted from Referrals sent by the Group.
+  operationId: get_v3_groups_group_id_cases_converted
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: closed
+      in: query
+      description: >-
+        Boolean value to hide or show only closed cases. Omit for open and
+        closed.
+      schema:
+        type: boolean
+    - name: 'q[referral_sender_users]'
+      in: query
+      description: Array of referral sending user uuids.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[service_types]'
+      in: query
+      description: Array of service type uuids.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[resolved]'
+      in: query
+      description: 'Boolean value - true for resolved, false for unresolved. Omit for all.'
+      schema:
+        type: boolean
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

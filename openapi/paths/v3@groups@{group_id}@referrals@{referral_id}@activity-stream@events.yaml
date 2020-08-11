@@ -1,0 +1,59 @@
+get:
+  tags:
+    - 'Referrals: Timeline Events'
+  summary: Returns a list of events for the selected Contact.
+  description: |
+
+    <p>Activity Stream or Timeline events are returned loosely based on the
+    Activity Stream specification (<a
+    href="http://activitystrea.ms">activitystrea.ms</a>).</p>
+
+    <p>Available <code>verb</code> values include: <code>accept</code>,
+    <code>add</code>, <code>assign</code>, <code>close</code>,
+    <code>complete</code>, <code>create</code>, <code>delete</code>,
+    <code>deny</code>, <code>join</code>, <code>leave</code>,
+    <code>open</code>, <code>post</code>, <code>replace</code>,
+    <code>retract</code>, <code>save</code>, <code>send</code>, and
+    <code>update</code>.</p>
+
+    <p>Use the verb, object, and target values to determine the event that
+    occurred.</p>
+  operationId: get_v3_groups_group_id_referrals_referral_id_activity-stream_events
+  parameters:
+    - name: referral_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,367 @@
+get:
+  tags:
+    - Global Contact Notification Settings for Users
+  summary: Returns contact notification settings for the current user and a contact
+  operationId: get_v3_notification-preferences_contacts_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: new_case
+      in: query
+      description: new case
+      schema:
+        type: boolean
+    - name: case_status_change
+      in: query
+      description: case status changed
+      schema:
+        type: boolean
+    - name: referral_made
+      in: query
+      description: referral made
+      schema:
+        type: boolean
+    - name: referral_declined
+      in: query
+      description: referral declined
+      schema:
+        type: boolean
+    - name: referral_or_case_assigned
+      in: query
+      description: referral or case assigned
+      schema:
+        type: boolean
+    - name: contact_updated
+      in: query
+      description: contact updated
+      schema:
+        type: boolean
+    - name: contact_new_note
+      in: query
+      description: contact new note added
+      schema:
+        type: boolean
+    - name: contact_case_updated
+      in: query
+      description: contact case updated
+      schema:
+        type: boolean
+    - name: contact_case_new_note
+      in: query
+      description: contact case new note
+      schema:
+        type: boolean
+    - name: contact_case_new_document
+      in: query
+      description: contact case new document
+      schema:
+        type: boolean
+    - name: contact_assessment_updated
+      in: query
+      description: contact assessement updated
+      schema:
+        type: boolean
+    - name: care_team_member_added
+      in: query
+      description: care team member added
+      schema:
+        type: boolean
+    - name: care_team_member_updated
+      in: query
+      description: care team member updated
+      schema:
+        type: boolean
+    - name: care_team_member_removed
+      in: query
+      description: care team member removed
+      schema:
+        type: boolean
+    - name: primary_worker_assigned_to_case
+      in: query
+      description: primary worked assigned to case
+      schema:
+        type: boolean
+    - name: accepted_informed_consent
+      in: query
+      description: accepted informed consent
+      schema:
+        type: boolean
+    - name: declined_informed_consent
+      in: query
+      description: declined informed consent
+      schema:
+        type: boolean
+    - name: care_coordinator_assigned
+      in: query
+      description: care coordinator assigned
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: ok
+      content: {}
+put:
+  tags:
+    - Global Contact Notification Settings for Users
+  summary: Returns contact notification settings for the current user and a contact
+  operationId: put_v3_notification-preferences_contacts_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            new_case:
+              type: boolean
+              description: new case
+            case_status_change:
+              type: boolean
+              description: case status changed
+            referral_made:
+              type: boolean
+              description: referral made
+            referral_declined:
+              type: boolean
+              description: referral declined
+            referral_or_case_assigned:
+              type: boolean
+              description: referral or case assigned
+            contact_updated:
+              type: boolean
+              description: contact updated
+            contact_new_note:
+              type: boolean
+              description: contact new note added
+            contact_case_updated:
+              type: boolean
+              description: contact case updated
+            contact_case_new_note:
+              type: boolean
+              description: contact case new note
+            contact_case_new_document:
+              type: boolean
+              description: contact case new document
+            contact_assessment_updated:
+              type: boolean
+              description: contact assessement updated
+            care_team_member_added:
+              type: boolean
+              description: care team member added
+            care_team_member_updated:
+              type: boolean
+              description: care team member updated
+            care_team_member_removed:
+              type: boolean
+              description: care team member removed
+            primary_worker_assigned_to_case:
+              type: boolean
+              description: primary worked assigned to case
+            accepted_informed_consent:
+              type: boolean
+              description: accepted informed consent
+            declined_informed_consent:
+              type: boolean
+              description: declined informed consent
+            care_coordinator_assigned:
+              type: boolean
+              description: care coordinator assigned
+      multipart/form-data:
+        schema:
+          properties:
+            new_case:
+              type: boolean
+              description: new case
+            case_status_change:
+              type: boolean
+              description: case status changed
+            referral_made:
+              type: boolean
+              description: referral made
+            referral_declined:
+              type: boolean
+              description: referral declined
+            referral_or_case_assigned:
+              type: boolean
+              description: referral or case assigned
+            contact_updated:
+              type: boolean
+              description: contact updated
+            contact_new_note:
+              type: boolean
+              description: contact new note added
+            contact_case_updated:
+              type: boolean
+              description: contact case updated
+            contact_case_new_note:
+              type: boolean
+              description: contact case new note
+            contact_case_new_document:
+              type: boolean
+              description: contact case new document
+            contact_assessment_updated:
+              type: boolean
+              description: contact assessement updated
+            care_team_member_added:
+              type: boolean
+              description: care team member added
+            care_team_member_updated:
+              type: boolean
+              description: care team member updated
+            care_team_member_removed:
+              type: boolean
+              description: care team member removed
+            primary_worker_assigned_to_case:
+              type: boolean
+              description: primary worked assigned to case
+            accepted_informed_consent:
+              type: boolean
+              description: accepted informed consent
+            declined_informed_consent:
+              type: boolean
+              description: declined informed consent
+            care_coordinator_assigned:
+              type: boolean
+              description: care coordinator assigned
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Global Contact Notification Settings for Users
+  summary: Returns contact notification settings for the current user and a contact
+  operationId: patch_v3_notification-preferences_contacts_id
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            new_case:
+              type: boolean
+              description: new case
+            case_status_change:
+              type: boolean
+              description: case status changed
+            referral_made:
+              type: boolean
+              description: referral made
+            referral_declined:
+              type: boolean
+              description: referral declined
+            referral_or_case_assigned:
+              type: boolean
+              description: referral or case assigned
+            contact_updated:
+              type: boolean
+              description: contact updated
+            contact_new_note:
+              type: boolean
+              description: contact new note added
+            contact_case_updated:
+              type: boolean
+              description: contact case updated
+            contact_case_new_note:
+              type: boolean
+              description: contact case new note
+            contact_case_new_document:
+              type: boolean
+              description: contact case new document
+            contact_assessment_updated:
+              type: boolean
+              description: contact assessement updated
+            care_team_member_added:
+              type: boolean
+              description: care team member added
+            care_team_member_updated:
+              type: boolean
+              description: care team member updated
+            care_team_member_removed:
+              type: boolean
+              description: care team member removed
+            primary_worker_assigned_to_case:
+              type: boolean
+              description: primary worked assigned to case
+            accepted_informed_consent:
+              type: boolean
+              description: accepted informed consent
+            declined_informed_consent:
+              type: boolean
+              description: declined informed consent
+            care_coordinator_assigned:
+              type: boolean
+              description: care coordinator assigned
+      multipart/form-data:
+        schema:
+          properties:
+            new_case:
+              type: boolean
+              description: new case
+            case_status_change:
+              type: boolean
+              description: case status changed
+            referral_made:
+              type: boolean
+              description: referral made
+            referral_declined:
+              type: boolean
+              description: referral declined
+            referral_or_case_assigned:
+              type: boolean
+              description: referral or case assigned
+            contact_updated:
+              type: boolean
+              description: contact updated
+            contact_new_note:
+              type: boolean
+              description: contact new note added
+            contact_case_updated:
+              type: boolean
+              description: contact case updated
+            contact_case_new_note:
+              type: boolean
+              description: contact case new note
+            contact_case_new_document:
+              type: boolean
+              description: contact case new document
+            contact_assessment_updated:
+              type: boolean
+              description: contact assessement updated
+            care_team_member_added:
+              type: boolean
+              description: care team member added
+            care_team_member_updated:
+              type: boolean
+              description: care team member updated
+            care_team_member_removed:
+              type: boolean
+              description: care team member removed
+            primary_worker_assigned_to_case:
+              type: boolean
+              description: primary worked assigned to case
+            accepted_informed_consent:
+              type: boolean
+              description: accepted informed consent
+            declined_informed_consent:
+              type: boolean
+              description: declined informed consent
+            care_coordinator_assigned:
+              type: boolean
+              description: care coordinator assigned
+  responses:
+    '200':
+      description: ok
+      content: {}

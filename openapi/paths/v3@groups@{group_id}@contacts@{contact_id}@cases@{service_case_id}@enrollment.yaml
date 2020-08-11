@@ -1,0 +1,111 @@
+put:
+  tags:
+    - 'Group Cases: Enrollment'
+  summary: Updates the case program enrollment
+  operationId: put_v3_groups_group_id_contacts_contact_id_cases_service_case_id_enrollment
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'enrollment[referred_to]':
+              type: string
+              description: >-
+                Freeform text for information about where the client was
+                referred
+            'enrollment[enrolled_at]':
+              type: number
+              description: Timestamp representing the enrollment date.
+            'enrollment[exited_at]':
+              type: number
+              description: Timestamp representing the exit date.
+      multipart/form-data:
+        schema:
+          properties:
+            'enrollment[referred_to]':
+              type: string
+              description: >-
+                Freeform text for information about where the client was
+                referred
+            'enrollment[enrolled_at]':
+              type: number
+              description: Timestamp representing the enrollment date.
+            'enrollment[exited_at]':
+              type: number
+              description: Timestamp representing the exit date.
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Group Cases: Enrollment'
+  summary: Updates the case program enrollment
+  operationId: >-
+    patch_v3_groups_group_id_contacts_contact_id_cases_service_case_id_enrollment
+  parameters:
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: contact_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            'enrollment[referred_to]':
+              type: string
+              description: >-
+                Freeform text for information about where the client was
+                referred
+            'enrollment[enrolled_at]':
+              type: number
+              description: Timestamp representing the enrollment date.
+            'enrollment[exited_at]':
+              type: number
+              description: Timestamp representing the exit date.
+      multipart/form-data:
+        schema:
+          properties:
+            'enrollment[referred_to]':
+              type: string
+              description: >-
+                Freeform text for information about where the client was
+                referred
+            'enrollment[enrolled_at]':
+              type: number
+              description: Timestamp representing the enrollment date.
+            'enrollment[exited_at]':
+              type: number
+              description: Timestamp representing the exit date.
+  responses:
+    '200':
+      description: ok
+      content: {}

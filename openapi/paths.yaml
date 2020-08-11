@@ -1,0 +1,9 @@
+get:
+  tags:
+    - 'API: Status'
+  summary: Checks the status of the Unite US API.
+  operationId: get
+  responses:
+    '200':
+      description: ok
+      content: {}

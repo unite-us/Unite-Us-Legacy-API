@@ -1,0 +1,82 @@
+put:
+  tags:
+    - 'Groups: Service Case Contact Respond to Form'
+  summary: Upserts a contact's response to the specified form/assessment.
+  operationId: put_v3_groups_group_id_cases_service_case_id_forms_form_id_response
+  parameters:
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            data:
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            data:
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - 'Groups: Service Case Contact Respond to Form'
+  summary: Upserts a contact's response to the specified form/assessment.
+  operationId: patch_v3_groups_group_id_cases_service_case_id_forms_form_id_response
+  parameters:
+    - name: form_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: service_case_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            data:
+              type: array
+              items:
+                type: string
+      multipart/form-data:
+        schema:
+          properties:
+            data:
+              type: array
+              items:
+                type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,59 @@
+get:
+  tags:
+    - 'Groups: Program Users'
+  summary: Returns a list of users with access to the program.
+  operationId: get_v3_groups_group_id_programs_program_id_users
+  parameters:
+    - name: program_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[text]'
+      in: query
+      description: Query to search user's first or last name
+      schema:
+        type: string
+    - name: 'q[employ_state]'
+      in: query
+      description: >-
+        Filter the results returned by the user's employment status with the
+        group.
+      schema:
+        type: string
+        enum:
+          - is_active
+          - is_inactive
+          - any
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

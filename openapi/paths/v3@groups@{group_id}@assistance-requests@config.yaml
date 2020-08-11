@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'Groups: Assistance Request Form Config'
+  summary: Shows the assistance request form configuration for the selected group.
+  operationId: get_v3_groups_group_id_assistance-requests_config
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

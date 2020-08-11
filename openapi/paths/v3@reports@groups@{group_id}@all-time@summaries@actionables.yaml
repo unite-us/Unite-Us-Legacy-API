@@ -1,0 +1,15 @@
+get:
+  tags:
+    - 'All-Time Reports: Actionables Summary'
+  summary: Returns a snapshot of the selected organization or network's actionables.
+  operationId: get_v3_reports_groups_group_id_all-time_summaries_actionables
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}

@@ -1,0 +1,88 @@
+put:
+  tags:
+    - Confirming Two-Factor Authentication (2FA) Registration
+  summary: Confirms a user's 2FA registration.
+  description: |
+
+    <p>Takes a confirmation token from the client and verifies that token with
+    Authy API. A successful confirmation will return a <code>200 SUCCESS</code>
+    response to the client.</p>
+  operationId: put_v3_users_user_id_2fa_confirmations
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token the user received via SMS.
+      multipart/form-data:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token the user received via SMS.
+  responses:
+    '200':
+      description: ok
+      content: {}
+post:
+  tags:
+    - Confirming Two-Factor Authentication (2FA) Registration
+  summary: Resend two-factor authentication (2FA) token to the user's phone number.
+  description: |
+
+    <p>Resends a token to the user&#39;s phone number in order to confirm their
+    registration process. A successful resend will return a <code>200
+    SUCCESS</code> response to the client.</p>
+  operationId: post_v3_users_user_id_2fa_confirmations
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
+patch:
+  tags:
+    - Confirming Two-Factor Authentication (2FA) Registration
+  summary: Confirms a user's 2FA registration.
+  description: |
+
+    <p>Takes a confirmation token from the client and verifies that token with
+    Authy API. A successful confirmation will return a <code>200 SUCCESS</code>
+    response to the client.</p>
+  operationId: patch_v3_users_user_id_2fa_confirmations
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token the user received via SMS.
+      multipart/form-data:
+        schema:
+          properties:
+            token:
+              type: string
+              description: The token the user received via SMS.
+  responses:
+    '200':
+      description: ok
+      content: {}

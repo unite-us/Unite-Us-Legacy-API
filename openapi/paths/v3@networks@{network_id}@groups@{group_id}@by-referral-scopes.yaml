@@ -1,0 +1,99 @@
+get:
+  tags:
+    - 'Networks: Groups by Referral Scope'
+  summary: >-
+    Returns a list of groups based on the referral scopes existing for [Network,
+    scope_to_group_id].
+  operationId: get_v3_networks_network_id_groups_group_id_by-referral-scopes
+  parameters:
+    - name: group_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: network_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: 'q[include_home_groups]'
+      in: query
+      description: >-
+        Optionally include all groups for any provided `permitted_network` which
+        is the same as `network_id`, regardless of its referral scope
+      schema:
+        type: boolean
+    - name: 'q[permitted_networks]'
+      in: query
+      description: >-
+        Identifiers of networks that should be used to determine a referral
+        scope.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[service_type_ids]'
+      in: query
+      description: An array of service type IDs to match network groups with.
+      style: form
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: 'q[name]'
+      in: query
+      description: All or part of an organization name within the network to match.
+      schema:
+        type: string
+    - name: 'q[include_address_book]'
+      in: query
+      description: >-
+        Optionally include address book groups with in network groups for the
+        current group
+      schema:
+        type: boolean
+    - name: 'q[only_address_book]'
+      in: query
+      description: Optionally only show address book groups for the current group
+      schema:
+        type: boolean
+    - name: 'q[address_book_status]'
+      in: query
+      description: Optionally filter address book groups by their status
+      schema:
+        type: string
+        enum:
+          - draft
+          - in_review
+          - published
+          - archived
+    - name: page
+      in: query
+      description: The page of results to be returned.
+      schema:
+        type: number
+    - name: per
+      in: query
+      description: The number of records to be returned per page.
+      schema:
+        type: number
+    - name: sord
+      in: query
+      description: The order to sort the results.
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    - name: sidx
+      in: query
+      description: The attribute to sort the results by.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content: {}
